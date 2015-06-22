@@ -1,17 +1,27 @@
 package com.example.jonas.mymoviesdatabase_android;
 
+import android.app.ListActivity;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
 
-public class FrontActivity extends ActionBarActivity {
+
+public class FrontActivity extends ListActivity {
+
+    private ArrayList<MovieObject> allMovies = new ArrayList<>();
+    private Runnable listRunnable;
+    private MovieListAdapter listAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_front);
+
+        addTestData();
+        initAdapter();
     }
 
     @Override
@@ -34,5 +44,27 @@ public class FrontActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void initAdapter(){
+        listAdapter = new MovieListAdapter(this, R.layout.movie_layout, allMovies);
+        setListAdapter(listAdapter);
+
+        Thread thread = new Thread(null, listRunnable, "initList");
+        thread.start();
+    }
+
+    public void addTestData(){
+        MovieObject mo1, mo2, mo3, mo4;
+
+        mo1 = new MovieObject("title", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
+        mo2 = new MovieObject("title2", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
+        mo3 = new MovieObject("title3", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
+        mo4 = new MovieObject("title4", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
+
+        allMovies.add(mo1);
+        allMovies.add(mo2);
+        allMovies.add(mo3);
+        allMovies.add(mo4);
     }
 }
