@@ -1,10 +1,14 @@
 package com.example.jonas.mymoviesdatabase_android;
 
 import android.app.ListActivity;
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 
 import java.util.ArrayList;
 
@@ -22,6 +26,7 @@ public class FrontActivity extends ListActivity {
 
         addTestData();
         initAdapter();
+        initListViewListener();
     }
 
     @Override
@@ -44,6 +49,20 @@ public class FrontActivity extends ListActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void initListViewListener(){
+        getListView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                MovieObject MOVIE_TO_VIEW = (MovieObject)parent.getAdapter().getItem(position);
+
+                Intent i = new Intent(getApplicationContext(), MovieDetailsActivity.class);
+                i.putExtra("OBJECT_ZERO", MOVIE_TO_VIEW);
+                startActivity(i);
+            }
+        });
     }
 
     public void initAdapter(){

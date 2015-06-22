@@ -1,9 +1,12 @@
 package com.example.jonas.mymoviesdatabase_android;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 /**
  * Created by Jonas on 22-06-2015.
  */
-public class MovieObject {
+public class MovieObject implements Parcelable{
 
     private String title;
     private String year;
@@ -149,5 +152,67 @@ public class MovieObject {
 
     public void setImdbID(String imdbID) {
         this.imdbID = imdbID;
+    }
+
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.title);
+        dest.writeString(this.year);
+        dest.writeString(this.rating);
+        dest.writeString(this.release);
+        dest.writeString(this.runtime);
+        dest.writeString(this.genre);
+        dest.writeString(this.director);
+        dest.writeString(this.writers);
+        dest.writeString(this.actors);
+        dest.writeString(this.plot);
+        dest.writeString(this.country);
+        dest.writeString(this.posterImage);
+        dest.writeString(this.imdbRating);
+        dest.writeString(this.imdbID);
+    }
+
+    public static final Parcelable.Creator<MovieObject> CREATOR = new Parcelable.Creator<MovieObject>(){
+
+        @Override
+        public MovieObject createFromParcel(Parcel source) {
+            return new MovieObject(source);
+        }
+
+        @Override
+        public MovieObject[] newArray(int size) {
+            return new MovieObject[size];
+        }
+    };
+
+    public MovieObject(Parcel in){
+        title = in.readString();
+        year = in.readString();
+        rating = in.readString();
+        release = in.readString();
+        runtime = in.readString();
+        genre = in.readString();
+        director = in.readString();
+        writers = in.readString();
+        actors = in.readString();
+        plot = in.readString();
+        country = in.readString();
+        posterImage = in.readString();
+        imdbRating = in.readString();
+        imdbID = in.readString();
+    }
+
+    @Override
+    public String toString() {
+        return "MovieObject{" +
+                "title='" + title + '\'' +
+                ", year='" + year + '\'' +
+                '}';
     }
 }

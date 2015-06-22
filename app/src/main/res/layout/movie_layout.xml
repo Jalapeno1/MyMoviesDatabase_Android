@@ -3,8 +3,8 @@
     android:layout_width="match_parent" android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="140dp"
+        android:layout_width="66dp"
+        android:layout_height="100dp"
         android:id="@+id/imageView_MOVIE_POSTER"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
@@ -12,10 +12,10 @@
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="6dp"
         android:text="Lord of The Rings: The Return of The King"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:id="@+id/textView_MOVIE_TITLE"
         android:layout_alignParentTop="true"
         android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
@@ -24,7 +24,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="YEAR:"
-        android:textSize="16sp"
+        android:textSize="13sp"
         android:id="@+id/textView_MOVIE_YEAR"
         android:layout_below="@+id/textView_MOVIE_TITLE"
         android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
@@ -33,7 +33,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="RUNTIME:"
-        android:textSize="16sp"
+        android:textSize="13sp"
         android:id="@+id/textView_MOVIE_RUNTIME"
         android:layout_below="@+id/textView_MOVIE_YEAR"
         android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
@@ -42,7 +42,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="GENRE:"
-        android:textSize="16sp"
+        android:textSize="13sp"
         android:id="@+id/textView_MOVIE_GENRE"
         android:layout_below="@+id/textView_MOVIE_RUNTIME"
         android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
@@ -51,7 +51,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="DIRECTOR:"
-        android:textSize="16sp"
+        android:textSize="13sp"
         android:id="@+id/textView_MOVIE_DIRECTOR"
         android:layout_below="@+id/textView_MOVIE_GENRE"
         android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
