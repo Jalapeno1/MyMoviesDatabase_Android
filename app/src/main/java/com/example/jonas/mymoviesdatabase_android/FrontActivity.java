@@ -76,10 +76,10 @@ public class FrontActivity extends ListActivity {
     public void addTestData(){
         MovieObject mo1, mo2, mo3, mo4;
 
-        mo1 = new MovieObject("title", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
-        mo2 = new MovieObject("title2", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
-        mo3 = new MovieObject("title3", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
-        mo4 = new MovieObject("title4", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test", "test");
+        mo1 = new MovieObject("Lord of The Rings: The Fellowship of The Ring And so on and on and on and on", "2001", "test", "test", "test", "test", "test", "test", "test", "test", "test", "http://ia.media-imdb.com/images/M/MV5BNTEyMjAwMDU1OV5BMl5BanBnXkFtZTcwNDQyNTkxMw@@._V1_SX300.jpg", "test", "test");
+        mo2 = new MovieObject("Something", "2010", "test", "test", "test", "test", "test", "test", "test", "test", "test", "http://ia.media-imdb.com/images/M/MV5BMTY1NTY0NTg3Nl5BMl5BanBnXkFtZTgwNTUzOTk1MDE@._V1_SX300.jpg", "test", "test");
+        mo3 = new MovieObject("Jurassic Park", "1993", "test", "test", "test", "test", "test", "test", "test", "test", "test", "http://ia.media-imdb.com/images/M/MV5BMjM2MDgxMDg0Nl5BMl5BanBnXkFtZTgwNTM2OTM5NDE@._V1_SX300.jpg", "test", "test");
+        mo4 = new MovieObject("Evil Dead", "2013", "test", "test", "test", "test", "test", "test", "test", "test", "test", "http://ia.media-imdb.com/images/M/MV5BNTQ3OTkwNTgyN15BMl5BanBnXkFtZTcwNTAzOTAzOQ@@._V1_SX300.jpg", "test", "test");
 
         allMovies.add(mo1);
         allMovies.add(mo2);

@@ -43,27 +43,42 @@ public class MovieListAdapter extends ArrayAdapter<MovieObject> {
             TextView movie_director = (TextView) v.findViewById(R.id.textView_MOVIE_DIRECTOR);
 
             if(movie_poster != null){
-                movie_poster.setImageResource(R.mipmap.ic_launcher);
+                new DownloadImageManager(movie_poster).execute(mo.getPosterImage());
             }
 
             if(movie_title != null){
-                movie_title.setText(mo.getTitle());
+                if(mo.getTitle().length() < 46)
+                    movie_title.setText(mo.getTitle());
+                else
+                    movie_title.setText(mo.getTitle().substring(0, 43) + "...");
             }
 
             if(movie_year != null){
-                movie_year.setText(mo.getYear());
+                if(mo.getYear().length() < 25)
+                    movie_year.setText("Year: " + mo.getYear());
+                else
+                    movie_year.setText("Year: " + mo.getYear().substring(0, 22) + "...");
             }
 
             if(movie_runtime != null){
-                movie_runtime.setText(mo.getRuntime());
+                if(mo.getRuntime().length() < 25)
+                    movie_runtime.setText("Runtime: " + mo.getRuntime());
+                else
+                    movie_runtime.setText("Runtime: " + mo.getRuntime().substring(0, 22) + "...");
             }
 
             if(movie_genre != null){
-                movie_genre.setText(mo.getGenre());
+                if(mo.getGenre().length() < 25)
+                    movie_genre.setText("Genre: " + mo.getGenre());
+                else
+                    movie_genre.setText("Genre: " + mo.getGenre().substring(0, 22) + "...");
             }
 
             if(movie_director != null){
-                movie_director.setText(mo.getDirector());
+                if(mo.getDirector().length() < 25)
+                    movie_director.setText("Director: " + mo.getDirector());
+                else
+                    movie_director.setText("Director: " + mo.getDirector().substring(0, 22) + "...");
             }
 
         }
