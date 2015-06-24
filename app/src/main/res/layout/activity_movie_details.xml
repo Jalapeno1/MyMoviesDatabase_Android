@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="150dp"
         android:layout_height="225dp"
-        android:id="@+id/imageView_MOVIE_POSTER"
+        android:id="@+id/imageView_ADD_POSTER"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginEnd="6dp"/>
@@ -19,8 +19,8 @@
         android:layout_height="120dp"
         android:text="Lord of The Rings: The Return of The King"
         android:textSize="22sp"
-        android:id="@+id/textView_MOVIE_TITLE"
-        android:layout_toEndOf="@+id/imageView_MOVIE_POSTER"
+        android:id="@+id/textView_ADD_TITLE"
+        android:layout_toEndOf="@+id/imageView_ADD_POSTER"
         android:layout_alignParentTop="true" />
 
     <TextView
@@ -28,36 +28,36 @@
         android:layout_height="wrap_content"
         android:text="YEAR:"
         android:textSize="16sp"
-        android:id="@+id/textView_MOVIE_YEAR"
-        android:layout_below="@+id/textView_MOVIE_TITLE"
-        android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
+        android:id="@+id/textView_ADD_YEAR"
+        android:layout_below="@+id/textView_ADD_TITLE"
+        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="RUNTIME:"
         android:textSize="16sp"
-        android:id="@+id/textView_MOVIE_RUNTIME"
-        android:layout_below="@+id/textView_MOVIE_YEAR"
-        android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
+        android:id="@+id/textView_ADD_RUNTIME"
+        android:layout_below="@+id/textView_ADD_YEAR"
+        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="RATED:"
         android:textSize="16sp"
-        android:id="@+id/textView_MOVIE_RATED"
-        android:layout_below="@+id/textView_MOVIE_RUNTIME"
-        android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
+        android:id="@+id/textView_ADD_RATED"
+        android:layout_below="@+id/textView_ADD_RUNTIME"
+        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="DIRECTOR:"
         android:textSize="16sp"
-        android:id="@+id/textView_MOVIE_DIRECTOR"
-        android:layout_below="@+id/textView_MOVIE_RATED"
-        android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
+        android:id="@+id/textView_ADD_DIRECTOR"
+        android:layout_below="@+id/textView_ADD_RATED"
+        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -65,8 +65,8 @@
         android:layout_marginTop="4dp"
         android:text="SYNOPSIS"
         android:textSize="16sp"
-        android:id="@+id/textView_PLOT"
-        android:layout_below="@+id/imageView_MOVIE_POSTER"
+        android:id="@+id/textView_ADD_PLOT"
+        android:layout_below="@+id/imageView_ADD_POSTER"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -74,8 +74,8 @@
         android:layout_height="wrap_content"
         android:text="ACTORS"
         android:textSize="16sp"
-        android:id="@+id/textView_ACTORS"
-        android:layout_below="@+id/textView_PLOT"
+        android:id="@+id/textView_ADD_ACTORS"
+        android:layout_below="@+id/textView_ADD_PLOT"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -83,8 +83,8 @@
         android:layout_height="wrap_content"
         android:text="WRITERS"
         android:textSize="16sp"
-        android:id="@+id/textView_WRITERS"
-        android:layout_below="@+id/textView_ACTORS"
+        android:id="@+id/textView_ADD_WRITERS"
+        android:layout_below="@+id/textView_ADD_ACTORS"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -92,8 +92,8 @@
         android:layout_height="wrap_content"
         android:text="GENRE"
         android:textSize="16sp"
-        android:id="@+id/textView_GENRE"
-        android:layout_below="@+id/textView_WRITERS"
+        android:id="@+id/textView_ADD_GENRE"
+        android:layout_below="@+id/textView_ADD_WRITERS"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -101,8 +101,8 @@
         android:layout_height="wrap_content"
         android:text="IMDB RATING"
         android:textSize="16sp"
-        android:id="@+id/textView_IMDB_RATING"
-        android:layout_below="@+id/textView_GENRE"
+        android:id="@+id/textView_ADD_IMDB_RATING"
+        android:layout_below="@+id/textView_ADD_GENRE"
         android:layout_alignParentStart="true" />
 
     <TextView
@@ -110,8 +110,8 @@
         android:layout_height="wrap_content"
         android:text="COUNTRY"
         android:textSize="16sp"
-        android:id="@+id/textView_COUNTRY"
-        android:layout_below="@+id/textView_IMDB_RATING"
+        android:id="@+id/textView_ADD_COUNTRY"
+        android:layout_below="@+id/textView_ADD_IMDB_RATING"
         android:layout_alignParentStart="true" />
 
 

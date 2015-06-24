@@ -2,31 +2,34 @@ package com.example.jonas.mymoviesdatabase_android;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.AsyncTask;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.gson.Gson;
-
-import org.json.JSONObject;
-
-import java.io.BufferedInputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
 
 public class AddMovieActivity extends Activity {
 
-    private EditText editText;
+    private ImageView poster;
     private Button button;
+    private TextView textViewTitle;
+    private TextView textViewYear;
+    private TextView textViewRuntime;
+    private TextView textViewRated;
+    private TextView textViewDirector;
+    private TextView textViewPlot;
+    private TextView textViewActors;
+    private TextView textViewWriters;
+    private TextView textViewGenre;
+    private TextView textViewIMDBRating;
+    private TextView textViewCountry;
 
     private final String TAG = "AddMovieActivity";
 
@@ -34,6 +37,8 @@ public class AddMovieActivity extends Activity {
     private String mSearchYear = "";
 
     private Gson gson = new Gson();
+
+    private MovieObject mov;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,64 +50,75 @@ public class AddMovieActivity extends Activity {
         mSearchYear = intentRes.getStringExtra("SEARCH_YEAR");
         Log.d(TAG, mSearchTitle + ", " + mSearchYear);
 
-        editText = (EditText) findViewById(R.id.editTextTEST);
-        button = (Button) findViewById(R.id.buttonTEST);
+        initUI();
 
         Log.d(TAG, "Before Try-Catch");
 
         try {
-            MovieObject mov = gson.fromJson(new APIConnectionManager().execute("http://www.omdbapi.com/?t=" + mSearchTitle + "&y=" + mSearchYear + "&plot=full&r=json")
+            mov = gson.fromJson(new APIConnectionManager().execute("http://www.omdbapi.com/?t=" + mSearchTitle + "&y=" + mSearchYear + "&plot=short&r=json")
                     .get(), MovieObject.class);
             Log.d(TAG, mov.toString());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
+            fillUI(mov);
+        } catch (InterruptedException | ExecutionException e) {
             e.printStackTrace();
         }
-
-        editText.setText("something");
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                String text = "";
-                try {
-                    text = new APIConnectionManager().execute("http://www.omdbapi.com/?t=evil+dead&y=2013&plot=full&r=json").get();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                } catch (ExecutionException e) {
-                    e.printStackTrace();
-                }
-
-                editText.setText(text);
             }
         });
-
-
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_add_movie, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void initUI(){
+        button = (Button) findViewById(R.id.buttonADD);
+        poster = (ImageView) findViewById(R.id.imageView_ADD_POSTER);
+        textViewTitle = (TextView) findViewById(R.id.textView_ADD_TITLE);
+        textViewYear = (TextView) findViewById(R.id.textView_ADD_YEAR);
+        textViewRuntime = (TextView) findViewById(R.id.textView_ADD_RUNTIME);
+        textViewRated = (TextView) findViewById(R.id.textView_ADD_RATED);
+        textViewDirector = (TextView) findViewById(R.id.textView_ADD_DIRECTOR);
+        textViewPlot = (TextView) findViewById(R.id.textView_ADD_PLOT);
+        textViewActors = (TextView) findViewById(R.id.textView_ADD_ACTORS);
+        textViewWriters = (TextView) findViewById(R.id.textView_ADD_WRITERS);
+        textViewGenre = (TextView) findViewById(R.id.textView_ADD_GENRE);
+        textViewIMDBRating = (TextView) findViewById(R.id.textView_ADD_IMDB_RATING);
+        textViewCountry = (TextView) findViewById(R.id.textView_ADD_COUNTRY);
+    }
+
+    public void fillUI(final MovieObject movieObject){
+        new DownloadImageManager(poster).execute(movieObject.getPoster());
+        textViewTitle.setText(movieObject.getTitle());
+        textViewYear.setText("Release: " + movieObject.getYear());
+        textViewRuntime.setText("Runtime: " + movieObject.getRuntime());
+        textViewRated.setText("Rated " + movieObject.getRated());
+        textViewDirector.setText("Directed by " + movieObject.getDirector());
+        textViewPlot.setText(movieObject.getPlot());
+        textViewActors.setText("Starring " + movieObject.getActors());
+        textViewWriters.setText("Written by " + movieObject.getWriter());
+        textViewGenre.setText("Genre: " + movieObject.getGenre());
+        textViewIMDBRating.setText("IMDB Rating: " + movieObject.getImdbRating());
+        textViewCountry.setText("Country: " + movieObject.getCountry());
+    }
+
 }
 
 

@@ -56,17 +56,17 @@ public class MovieDetailsActivity extends Activity  {
     }
 
     public void initUI(){
-        imageView_POSTER = (ImageView) findViewById(R.id.imageView_MOVIE_POSTER);
-        textView_YEAR = (TextView) findViewById(R.id.textView_MOVIE_YEAR);
-        textView_RUNTIME = (TextView) findViewById(R.id.textView_MOVIE_RUNTIME);
-        textView_RATED = (TextView) findViewById(R.id.textView_MOVIE_RATED);
-        textView_DIRECTOR = (TextView) findViewById(R.id.textView_MOVIE_DIRECTOR);
-        textView_PLOT = (TextView) findViewById(R.id.textView_PLOT);
-        textView_ACTORS = (TextView) findViewById(R.id.textView_ACTORS);
-        textView_WRITERS = (TextView) findViewById(R.id.textView_WRITERS);
-        textView_GENRE = (TextView) findViewById(R.id.textView_GENRE);
-        textView_IMDB_RATING = (TextView) findViewById(R.id.textView_IMDB_RATING);
-        textView_COUNTRY = (TextView) findViewById(R.id.textView_COUNTRY);
+        imageView_POSTER = (ImageView) findViewById(R.id.imageView_ADD_POSTER);
+        textView_YEAR = (TextView) findViewById(R.id.textView_ADD_YEAR);
+        textView_RUNTIME = (TextView) findViewById(R.id.textView_ADD_RUNTIME);
+        textView_RATED = (TextView) findViewById(R.id.textView_ADD_RATED);
+        textView_DIRECTOR = (TextView) findViewById(R.id.textView_ADD_DIRECTOR);
+        textView_PLOT = (TextView) findViewById(R.id.textView_ADD_PLOT);
+        textView_ACTORS = (TextView) findViewById(R.id.textView_ADD_ACTORS);
+        textView_WRITERS = (TextView) findViewById(R.id.textView_ADD_WRITERS);
+        textView_GENRE = (TextView) findViewById(R.id.textView_ADD_GENRE);
+        textView_IMDB_RATING = (TextView) findViewById(R.id.textView_ADD_IMDB_RATING);
+        textView_COUNTRY = (TextView) findViewById(R.id.textView_ADD_COUNTRY);
     }
 
     public void fillUI(){

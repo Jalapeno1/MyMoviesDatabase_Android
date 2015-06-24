@@ -5,7 +5,7 @@
     <ImageView
         android:layout_width="100dp"
         android:layout_height="150dp"
-        android:id="@+id/imageView_MOVIE_POSTER"
+        android:id="@+id/imageView_ADD_POSTER"
         android:layout_alignParentTop="true"
         android:layout_alignParentStart="true"
         android:layout_marginEnd="6dp"/>
@@ -16,9 +16,9 @@
         android:layout_marginTop="6dp"
         android:text="Lord of The Rings: The Return of The King"
         android:textSize="18sp"
-        android:id="@+id/textView_MOVIE_TITLE"
+        android:id="@+id/textView_ADD_TITLE"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
+        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -26,9 +26,9 @@
         android:text="YEAR:"
         android:textSize="13sp"
         android:textColor="@color/button_material_dark"
-        android:id="@+id/textView_MOVIE_YEAR"
-        android:layout_below="@+id/textView_MOVIE_TITLE"
-        android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
+        android:id="@+id/textView_ADD_YEAR"
+        android:layout_below="@+id/textView_ADD_TITLE"
+        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -36,9 +36,9 @@
         android:text="RUNTIME:"
         android:textSize="13sp"
         android:textColor="@color/button_material_dark"
-        android:id="@+id/textView_MOVIE_RUNTIME"
-        android:layout_below="@+id/textView_MOVIE_YEAR"
-        android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
+        android:id="@+id/textView_ADD_RUNTIME"
+        android:layout_below="@+id/textView_ADD_YEAR"
+        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -47,8 +47,8 @@
         android:textSize="13sp"
         android:textColor="@color/button_material_dark"
         android:id="@+id/textView_MOVIE_GENRE"
-        android:layout_below="@+id/textView_MOVIE_RUNTIME"
-        android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
+        android:layout_below="@+id/textView_ADD_RUNTIME"
+        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -56,9 +56,9 @@
         android:text="DIRECTOR:"
         android:textSize="13sp"
         android:textColor="@color/button_material_dark"
-        android:id="@+id/textView_MOVIE_DIRECTOR"
+        android:id="@+id/textView_ADD_DIRECTOR"
         android:layout_below="@+id/textView_MOVIE_GENRE"
-        android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
+        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
 
 
 </RelativeLayout>

@@ -35,12 +35,12 @@ public class MovieListAdapter extends ArrayAdapter<MovieObject> {
         MovieObject mo = movieObjects.get(position);
 
         if(mo != null){
-            ImageView movie_poster = (ImageView) v.findViewById(R.id.imageView_MOVIE_POSTER);
-            TextView movie_title = (TextView) v.findViewById(R.id.textView_MOVIE_TITLE);
-            TextView movie_year = (TextView) v.findViewById(R.id.textView_MOVIE_YEAR);
-            TextView movie_runtime = (TextView) v.findViewById(R.id.textView_MOVIE_RUNTIME);
+            ImageView movie_poster = (ImageView) v.findViewById(R.id.imageView_ADD_POSTER);
+            TextView movie_title = (TextView) v.findViewById(R.id.textView_ADD_TITLE);
+            TextView movie_year = (TextView) v.findViewById(R.id.textView_ADD_YEAR);
+            TextView movie_runtime = (TextView) v.findViewById(R.id.textView_ADD_RUNTIME);
             TextView movie_genre = (TextView) v.findViewById(R.id.textView_MOVIE_GENRE);
-            TextView movie_director = (TextView) v.findViewById(R.id.textView_MOVIE_DIRECTOR);
+            TextView movie_director = (TextView) v.findViewById(R.id.textView_ADD_DIRECTOR);
 
             if(movie_poster != null){
                 new DownloadImageManager(movie_poster).execute(mo.getPoster());
@@ -55,9 +55,9 @@ public class MovieListAdapter extends ArrayAdapter<MovieObject> {
 
             if(movie_year != null){
                 if(mo.getYear().length() < 25)
-                    movie_year.setText("Year: " + mo.getYear());
+                    movie_year.setText("Release: " + mo.getYear());
                 else
-                    movie_year.setText("Year: " + mo.getYear().substring(0, 22) + "...");
+                    movie_year.setText("Release: " + mo.getYear().substring(0, 22) + "...");
             }
 
             if(movie_runtime != null){
@@ -76,9 +76,9 @@ public class MovieListAdapter extends ArrayAdapter<MovieObject> {
 
             if(movie_director != null){
                 if(mo.getDirector().length() < 25)
-                    movie_director.setText("Director: " + mo.getDirector());
+                    movie_director.setText("Directed by " + mo.getDirector());
                 else
-                    movie_director.setText("Director: " + mo.getDirector().substring(0, 22) + "...");
+                    movie_director.setText("Directed by " + mo.getDirector().substring(0, 22) + "...");
             }
 
         }
