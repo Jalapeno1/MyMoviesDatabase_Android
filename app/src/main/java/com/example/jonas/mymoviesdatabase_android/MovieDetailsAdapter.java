@@ -2,6 +2,7 @@ package com.example.jonas.mymoviesdatabase_android;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -15,7 +16,10 @@ import java.util.ArrayList;
  * Created by Jonas on 24-06-2015.
  */
 public class MovieDetailsAdapter extends ArrayAdapter<MovieObject> {
+
     private ArrayList<MovieObject> movieObjects;
+    private MovieObject mo;
+    private boolean expanded = false;
 
     boolean fromSearch = false;
 
@@ -35,7 +39,7 @@ public class MovieDetailsAdapter extends ArrayAdapter<MovieObject> {
             v = inflater.inflate(R.layout.movie_details_layout, null);
         }
 
-        MovieObject mo = movieObjects.get(position);
+        mo = movieObjects.get(position);
 
         if(mo != null){
             Button button = (Button) v.findViewById(R.id.buttonADD);
@@ -45,7 +49,7 @@ public class MovieDetailsAdapter extends ArrayAdapter<MovieObject> {
             TextView textViewRuntime = (TextView) v.findViewById(R.id.textView_ADD_RUNTIME);
             TextView textViewRated = (TextView) v.findViewById(R.id.textView_ADD_RATED);
             TextView textViewDirector = (TextView) v.findViewById(R.id.textView_ADD_DIRECTOR);
-            TextView textViewPlot = (TextView) v.findViewById(R.id.textView_ADD_PLOT);
+            final TextView textViewPlot = (TextView) v.findViewById(R.id.textView_ADD_PLOT);
             TextView textViewActors = (TextView) v.findViewById(R.id.textView_ADD_ACTORS);
             TextView textViewWriters = (TextView) v.findViewById(R.id.textView_ADD_WRITERS);
             TextView textViewGenre = (TextView) v.findViewById(R.id.textView_ADD_GENRE);
@@ -61,7 +65,31 @@ public class MovieDetailsAdapter extends ArrayAdapter<MovieObject> {
             textViewRuntime.setText("Runtime: " + mo.getRuntime());
             textViewRated.setText("Rated " + mo.getRated());
             textViewDirector.setText("Directed by " + mo.getDirector());
-            textViewPlot.setText(mo.getPlot());
+
+            try {
+                textViewPlot.setText(mo.getPlot().substring(0, 60) + "... (click to expand)");
+            } catch (Exception e){
+                textViewPlot.setText(mo.getPlot());
+            }
+
+            textViewPlot.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(!expanded) {
+                        textViewPlot.setText(mo.getPlot());
+                        expanded = true;
+                    }
+                    else {
+                        try {
+                            textViewPlot.setText(mo.getPlot().substring(0, 60) + "... (click to expand)");
+                            expanded = false;
+                        } catch (Exception e){
+                            textViewPlot.setText(mo.getPlot());
+                        }
+                    }
+                }
+            });
+
             textViewActors.setText("Starring " + mo.getActors());
             textViewWriters.setText("Written by " + mo.getWriter());
             textViewGenre.setText("Genre: " + mo.getGenre());

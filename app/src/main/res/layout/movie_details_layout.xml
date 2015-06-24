@@ -1,126 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin">
+    android:layout_height="match_parent" >
+
 
     <ImageView
-        android:layout_width="150dp"
-        android:layout_height="225dp"
+        android:layout_width="fill_parent"
+        android:layout_height="280dp"
         android:id="@+id/imageView_ADD_POSTER"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginEnd="6dp"/>
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Lord of The Rings: The Return of The King"
-        android:textSize="22sp"
-        android:paddingBottom="10dp"
-        android:id="@+id/textView_ADD_TITLE"
-        android:layout_toEndOf="@+id/imageView_ADD_POSTER"
-        android:layout_alignParentTop="true" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="YEAR:"
-        android:textSize="16sp"
-        android:id="@+id/textView_ADD_YEAR"
-        android:layout_below="@+id/textView_ADD_TITLE"
-        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="RUNTIME:"
-        android:textSize="16sp"
-        android:id="@+id/textView_ADD_RUNTIME"
-        android:layout_below="@+id/textView_ADD_YEAR"
-        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="RATED:"
-        android:textSize="16sp"
-        android:id="@+id/textView_ADD_RATED"
-        android:layout_below="@+id/textView_ADD_RUNTIME"
-        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="DIRECTOR:"
-        android:textSize="16sp"
-        android:id="@+id/textView_ADD_DIRECTOR"
-        android:layout_below="@+id/textView_ADD_RATED"
-        android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
-
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="SYNOPSIS"
-        android:textSize="16sp"
-        android:id="@+id/textView_ADD_PLOT"
-        android:layout_below="@+id/imageView_ADD_POSTER"
         android:layout_alignParentStart="true" />
 
-    <TextView
+    <RelativeLayout
+        android:id="@+id/layout1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="ACTORS"
-        android:textSize="16sp"
-        android:id="@+id/textView_ADD_ACTORS"
-        android:layout_below="@+id/textView_ADD_PLOT"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/imageView_ADD_POSTER">
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="WRITERS"
-        android:textSize="16sp"
-        android:id="@+id/textView_ADD_WRITERS"
-        android:layout_below="@+id/textView_ADD_ACTORS"
-        android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Lord of The Rings: The Return of The King"
+            android:textSize="22sp"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:id="@+id/textView_ADD_TITLE"
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="GENRE"
-        android:textSize="16sp"
-        android:id="@+id/textView_ADD_GENRE"
-        android:layout_below="@+id/textView_ADD_WRITERS"
-        android:layout_alignParentStart="true" />
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="IMDB RATING"
-        android:textSize="16sp"
-        android:id="@+id/textView_ADD_IMDB_RATING"
-        android:layout_below="@+id/textView_ADD_GENRE"
-        android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="YEAR:"
+            android:textSize="16sp"
+            android:id="@+id/textView_ADD_YEAR"
+            android:layout_below="@+id/textView_ADD_TITLE"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="COUNTRY"
-        android:textSize="16sp"
-        android:id="@+id/textView_ADD_COUNTRY"
-        android:layout_below="@+id/textView_ADD_IMDB_RATING"
-        android:layout_alignParentStart="true" />
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="RUNTIME:"
+            android:textSize="16sp"
+            android:id="@+id/textView_ADD_RUNTIME"
+            android:layout_below="@+id/textView_ADD_YEAR"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
 
-    <Button
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="RATED:"
+            android:textSize="16sp"
+            android:id="@+id/textView_ADD_RATED"
+            android:layout_below="@+id/textView_ADD_RUNTIME"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DIRECTOR:"
+            android:textSize="16sp"
+            android:id="@+id/textView_ADD_DIRECTOR"
+            android:layout_below="@+id/textView_ADD_RATED"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/buttonADD"
-        android:layout_below="@+id/textView_ADD_COUNTRY"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/layout1">
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="SYNOPSIS"
+            android:textSize="13sp"
+            android:textStyle="italic"
+            android:paddingTop="7dp"
+            android:paddingBottom="7dp"
+            android:background="@android:color/darker_gray"
+            android:textColor="@android:color/white"
+            android:id="@+id/textView_ADD_PLOT"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/layout3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/layout2">
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="ACTORS"
+            android:textSize="16sp"
+            android:id="@+id/textView_ADD_ACTORS"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="WRITERS"
+            android:textSize="16sp"
+            android:id="@+id/textView_ADD_WRITERS"
+            android:layout_below="@+id/textView_ADD_ACTORS"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="GENRE"
+            android:textSize="16sp"
+            android:id="@+id/textView_ADD_GENRE"
+            android:layout_below="@+id/textView_ADD_WRITERS"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="IMDB RATING"
+            android:textSize="16sp"
+            android:id="@+id/textView_ADD_IMDB_RATING"
+            android:layout_below="@+id/textView_ADD_GENRE"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="COUNTRY"
+            android:textSize="16sp"
+            android:id="@+id/textView_ADD_COUNTRY"
+            android:layout_below="@+id/textView_ADD_IMDB_RATING"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:id="@+id/buttonADD"
+            android:layout_below="@+id/textView_ADD_COUNTRY"
+            android:layout_alignParentStart="true"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+    </RelativeLayout>
 
 </RelativeLayout>
