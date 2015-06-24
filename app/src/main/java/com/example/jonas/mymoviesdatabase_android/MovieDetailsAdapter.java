@@ -17,9 +17,12 @@ import java.util.ArrayList;
 public class MovieDetailsAdapter extends ArrayAdapter<MovieObject> {
     private ArrayList<MovieObject> movieObjects;
 
-    public MovieDetailsAdapter(Context context, int resource, ArrayList<MovieObject> objects) {
+    boolean fromSearch = false;
+
+    public MovieDetailsAdapter(Context context, int resource, ArrayList<MovieObject> objects, boolean bo) {
         super(context, resource, objects);
         this.movieObjects = objects;
+        fromSearch = bo;
     }
 
     @Override
@@ -64,6 +67,16 @@ public class MovieDetailsAdapter extends ArrayAdapter<MovieObject> {
             textViewGenre.setText("Genre: " + mo.getGenre());
             textViewIMDBRating.setText("IMDB Rating: " + mo.getImdbRating());
             textViewCountry.setText("Country: " + mo.getCountry());
+
+            if(fromSearch){
+                button.setText("Add");
+                //add button listener
+            } else if(!fromSearch){
+                button.setText("Delete");
+                //add button listener
+            }
+
+
         }
 
         return v;

@@ -16,9 +16,10 @@
 
     <TextView
         android:layout_width="fill_parent"
-        android:layout_height="120dp"
+        android:layout_height="wrap_content"
         android:text="Lord of The Rings: The Return of The King"
         android:textSize="22sp"
+        android:paddingBottom="10dp"
         android:id="@+id/textView_ADD_TITLE"
         android:layout_toEndOf="@+id/imageView_ADD_POSTER"
         android:layout_alignParentTop="true" />
@@ -113,14 +114,6 @@
         android:id="@+id/textView_ADD_COUNTRY"
         android:layout_below="@+id/textView_ADD_IMDB_RATING"
         android:layout_alignParentStart="true" />
-
-    <!--<EditText-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/editTextTEST"-->
-        <!--android:hint="insert url"-->
-        <!--android:layout_alignParentTop="true"-->
-        <!--android:layout_alignParentStart="true" />-->
 
     <Button
         android:layout_width="wrap_content"

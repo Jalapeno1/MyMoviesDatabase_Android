@@ -75,7 +75,7 @@ public class AddMovieActivityNEW extends ListActivity {
     }
 
     public void initAdapter(){
-        movieAdapter = new MovieDetailsAdapter(this, R.layout.movie_details_layout, movie);
+        movieAdapter = new MovieDetailsAdapter(this, R.layout.movie_details_layout, movie, true);
         setListAdapter(movieAdapter);
 
         Thread thread = new Thread(null, listRunnable, "initList");
