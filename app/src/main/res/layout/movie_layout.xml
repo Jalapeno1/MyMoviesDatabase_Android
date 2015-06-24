@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:text="YEAR:"
         android:textSize="13sp"
+        android:textColor="@color/button_material_dark"
         android:id="@+id/textView_MOVIE_YEAR"
         android:layout_below="@+id/textView_MOVIE_TITLE"
         android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
@@ -34,6 +35,7 @@
         android:layout_height="wrap_content"
         android:text="RUNTIME:"
         android:textSize="13sp"
+        android:textColor="@color/button_material_dark"
         android:id="@+id/textView_MOVIE_RUNTIME"
         android:layout_below="@+id/textView_MOVIE_YEAR"
         android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
@@ -43,6 +45,7 @@
         android:layout_height="wrap_content"
         android:text="GENRE:"
         android:textSize="13sp"
+        android:textColor="@color/button_material_dark"
         android:id="@+id/textView_MOVIE_GENRE"
         android:layout_below="@+id/textView_MOVIE_RUNTIME"
         android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />
@@ -52,6 +55,7 @@
         android:layout_height="wrap_content"
         android:text="DIRECTOR:"
         android:textSize="13sp"
+        android:textColor="@color/button_material_dark"
         android:id="@+id/textView_MOVIE_DIRECTOR"
         android:layout_below="@+id/textView_MOVIE_GENRE"
         android:layout_toEndOf="@+id/imageView_MOVIE_POSTER" />

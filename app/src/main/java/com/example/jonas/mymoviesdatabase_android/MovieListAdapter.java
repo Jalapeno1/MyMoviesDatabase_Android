@@ -43,7 +43,7 @@ public class MovieListAdapter extends ArrayAdapter<MovieObject> {
             TextView movie_director = (TextView) v.findViewById(R.id.textView_MOVIE_DIRECTOR);
 
             if(movie_poster != null){
-                new DownloadImageManager(movie_poster).execute(mo.getPosterImage());
+                new DownloadImageManager(movie_poster).execute(mo.getPoster());
             }
 
             if(movie_title != null){

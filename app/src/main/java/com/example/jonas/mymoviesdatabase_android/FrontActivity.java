@@ -2,20 +2,17 @@ package com.example.jonas.mymoviesdatabase_android;
 
 import android.app.ListActivity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-
 import java.util.ArrayList;
-
 
 public class FrontActivity extends ListActivity {
 
-    private ArrayList<MovieObject> allMovies = new ArrayList<>();
+    public ArrayList<MovieObject> allMovies = new ArrayList<>();
     private Runnable listRunnable;
     private MovieListAdapter listAdapter;
 
@@ -32,8 +29,9 @@ public class FrontActivity extends ListActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_front, menu);
-        return true;
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_front, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -43,9 +41,15 @@ public class FrontActivity extends ListActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_settings:
+                Intent in = new Intent(getApplicationContext(), AddMovieActivity.class);
+                startActivity(in);
+                break;
+            case R.id.action_searchMovie:
+                Intent in2 = new Intent(getApplicationContext(), SearchMovieActivity.class);
+                startActivity(in2);
+                break;
         }
 
         return super.onOptionsItemSelected(item);

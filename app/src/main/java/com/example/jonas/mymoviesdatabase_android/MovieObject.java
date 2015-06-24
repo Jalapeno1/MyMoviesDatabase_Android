@@ -8,86 +8,86 @@ import android.os.Parcelable;
  */
 public class MovieObject implements Parcelable{
 
-    private String title;
-    private String year;
-    private String rating;
-    private String release;
-    private String runtime;
-    private String genre;
-    private String director;
-    private String writers;
-    private String actors;
-    private String plot;
-    private String country;
-    private String posterImage;
+    private String Title;
+    private String Year;
+    private String Rated;
+    private String Released;
+    private String Runtime;
+    private String Genre;
+    private String Director;
+    private String Writer;
+    private String Actors;
+    private String Plot;
+    private String Country;
+    private String Poster;
     private String imdbRating;
     private String imdbID;
 
-    public MovieObject(String title, String year, String rating, String release, String runtime,
+    public MovieObject(String title, String year, String Rated, String release, String runtime,
                        String genre, String director, String writers, String actors, String plot,
                        String country, String posterImage, String imdbRating, String imdbID) {
-        this.title = title;
-        this.year = year;
-        this.rating = rating;
-        this.release = release;
-        this.runtime = runtime;
-        this.genre = genre;
-        this.director = director;
-        this.writers = writers;
-        this.actors = actors;
-        this.plot = plot;
-        this.country = country;
-        this.posterImage = posterImage;
+        this.Title = title;
+        this.Year = year;
+        this.Rated = Rated;
+        this.Released = release;
+        this.Runtime = runtime;
+        this.Genre = genre;
+        this.Director = director;
+        this.Writer = writers;
+        this.Actors = actors;
+        this.Plot = plot;
+        this.Country = country;
+        this.Poster = posterImage;
         this.imdbRating = imdbRating;
         this.imdbID = imdbID;
     }
 
     public String getTitle() {
-        return title;
+        return Title;
     }
 
     public String getYear() {
-        return year;
+        return Year;
     }
 
-    public String getRating() {
-        return rating;
+    public String getRated() {
+        return Rated;
     }
 
-    public String getRelease() {
-        return release;
+    public String getReleased() {
+        return Released;
     }
 
     public String getRuntime() {
-        return runtime;
+        return Runtime;
     }
 
     public String getGenre() {
-        return genre;
+        return Genre;
     }
 
     public String getDirector() {
-        return director;
+        return Director;
     }
 
-    public String getWriters() {
-        return writers;
+    public String getWriter() {
+        return Writer;
     }
 
     public String getActors() {
-        return actors;
+        return Actors;
     }
 
     public String getPlot() {
-        return plot;
+        return Plot;
     }
 
     public String getCountry() {
-        return country;
+        return Country;
     }
 
-    public String getPosterImage() {
-        return posterImage;
+    public String getPoster() {
+        return Poster;
     }
 
     public String getImdbRating() {
@@ -99,51 +99,51 @@ public class MovieObject implements Parcelable{
     }
 
     public void setTitle(String title) {
-        this.title = title;
+        this.Title = title;
     }
 
     public void setYear(String year) {
-        this.year = year;
+        this.Year = year;
     }
 
-    public void setRating(String rating) {
-        this.rating = rating;
+    public void setRated(String rated) {
+        this.Rated = rated;
     }
 
-    public void setRelease(String release) {
-        this.release = release;
+    public void setReleased(String released) {
+        this.Released = released;
     }
 
     public void setRuntime(String runtime) {
-        this.runtime = runtime;
+        this.Runtime = runtime;
     }
 
     public void setGenre(String genre) {
-        this.genre = genre;
+        this.Genre = genre;
     }
 
     public void setDirector(String director) {
-        this.director = director;
+        this.Director = director;
     }
 
-    public void setWriters(String writers) {
-        this.writers = writers;
+    public void setWriter(String writer) {
+        this.Writer = writer;
     }
 
     public void setActors(String actors) {
-        this.actors = actors;
+        this.Actors = actors;
     }
 
     public void setPlot(String plot) {
-        this.plot = plot;
+        this.Plot = plot;
     }
 
     public void setCountry(String country) {
-        this.country = country;
+        this.Country = country;
     }
 
-    public void setPosterImage(String posterImage) {
-        this.posterImage = posterImage;
+    public void setPoster(String poster) {
+        this.Poster = poster;
     }
 
     public void setImdbRating(String imdbRating) {
@@ -162,18 +162,18 @@ public class MovieObject implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.title);
-        dest.writeString(this.year);
-        dest.writeString(this.rating);
-        dest.writeString(this.release);
-        dest.writeString(this.runtime);
-        dest.writeString(this.genre);
-        dest.writeString(this.director);
-        dest.writeString(this.writers);
-        dest.writeString(this.actors);
-        dest.writeString(this.plot);
-        dest.writeString(this.country);
-        dest.writeString(this.posterImage);
+        dest.writeString(this.Title);
+        dest.writeString(this.Year);
+        dest.writeString(this.Rated);
+        dest.writeString(this.Released);
+        dest.writeString(this.Runtime);
+        dest.writeString(this.Genre);
+        dest.writeString(this.Director);
+        dest.writeString(this.Writer);
+        dest.writeString(this.Actors);
+        dest.writeString(this.Plot);
+        dest.writeString(this.Country);
+        dest.writeString(this.Poster);
         dest.writeString(this.imdbRating);
         dest.writeString(this.imdbID);
     }
@@ -192,18 +192,18 @@ public class MovieObject implements Parcelable{
     };
 
     public MovieObject(Parcel in){
-        title = in.readString();
-        year = in.readString();
-        rating = in.readString();
-        release = in.readString();
-        runtime = in.readString();
-        genre = in.readString();
-        director = in.readString();
-        writers = in.readString();
-        actors = in.readString();
-        plot = in.readString();
-        country = in.readString();
-        posterImage = in.readString();
+        Title = in.readString();
+        Year = in.readString();
+        Rated = in.readString();
+        Released = in.readString();
+        Runtime = in.readString();
+        Genre = in.readString();
+        Director = in.readString();
+        Writer = in.readString();
+        Actors = in.readString();
+        Plot = in.readString();
+        Country = in.readString();
+        Poster = in.readString();
         imdbRating = in.readString();
         imdbID = in.readString();
     }
@@ -211,8 +211,8 @@ public class MovieObject implements Parcelable{
     @Override
     public String toString() {
         return "MovieObject{" +
-                "title='" + title + '\'' +
-                ", year='" + year + '\'' +
+                "Title='" + Title + '\'' +
+                ", imdbRating='" + imdbRating + '\'' +
                 '}';
     }
 }

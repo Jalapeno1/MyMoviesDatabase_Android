@@ -4,4 +4,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_movie_details">MovieDetailsActivity</string>
+    <string name="title_activity_add_movie">AddMovieActivity</string>
+    <string name="title_activity_search_movie">SearchMovieActivity</string>
+    <string name="action_searchMovie">Search Movie</string>
 </resources>

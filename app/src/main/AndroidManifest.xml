@@ -7,11 +7,12 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:label="Movies"
         android:theme="@style/AppTheme" >
         <activity
             android:name=".FrontActivity"
-            android:label="@string/app_name" >
+            android:label="FrontActivity"
+            android:theme="@android:style/Theme.Holo.Light" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -21,6 +22,14 @@
         <activity
             android:name=".MovieDetailsActivity"
             android:label="@string/title_activity_movie_details" >
+        </activity>
+        <activity
+            android:name=".AddMovieActivity"
+            android:label="@string/title_activity_add_movie" >
+        </activity>
+        <activity
+            android:name=".SearchMovieActivity"
+            android:label="@string/title_activity_search_movie" >
         </activity>
     </application>
 
