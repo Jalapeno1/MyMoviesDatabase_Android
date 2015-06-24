@@ -31,6 +31,10 @@
             android:name=".SearchMovieActivity"
             android:label="@string/title_activity_search_movie" >
         </activity>
+        <activity
+            android:name=".AddMovieActivityNEW"
+            android:label="@string/title_activity_add_movie_activity_new" >
+        </activity>
     </application>
 
 </manifest>

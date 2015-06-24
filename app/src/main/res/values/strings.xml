@@ -7,4 +7,5 @@
     <string name="title_activity_add_movie">AddMovieActivity</string>
     <string name="title_activity_search_movie">SearchMovieActivity</string>
     <string name="action_searchMovie">Search Movie</string>
+    <string name="title_activity_add_movie_activity_new">AddMovieActivityNEW</string>
 </resources>
