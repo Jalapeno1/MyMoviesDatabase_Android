@@ -1,15 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/my_recycler_view"-->
+    <!--android:scrollbars="vertical"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--xmlns:android="http://schemas.android.com/apk/res/android" />-->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-
     <ImageView
-        android:layout_width="fill_parent"
-        android:layout_height="280dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
         android:id="@+id/imageView_ADD_POSTER"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        />
+
 
     <RelativeLayout
         android:id="@+id/layout1"
