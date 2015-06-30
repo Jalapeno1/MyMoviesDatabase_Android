@@ -35,6 +35,14 @@
             android:name=".AddMovieActivityNEW"
             android:label="@string/title_activity_add_movie_activity_new" >
         </activity>
+        <activity
+            android:name=".CardViewActivity"
+            android:label="@string/title_activity_card_view" >
+        </activity>
+        <activity
+            android:name=".RecyclerViewActivity"
+            android:label="@string/title_activity_recycler_view" >
+        </activity>
     </application>
 
 </manifest>

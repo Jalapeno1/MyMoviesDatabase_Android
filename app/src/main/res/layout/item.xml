@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cv"
+    >
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent" android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="150dp"
+            android:id="@+id/imageView_ADD_POSTER"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginEnd="6dp"/>
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="6dp"
+            android:text="Lord of The Rings: The Return of The King"
+            android:textSize="18sp"
+            android:id="@+id/textView_ADD_TITLE"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="YEAR:"
+            android:textSize="13sp"
+            android:textColor="@color/button_material_dark"
+            android:id="@+id/textView_ADD_YEAR"
+            android:layout_below="@+id/textView_ADD_TITLE"
+            android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="RUNTIME:"
+            android:textSize="13sp"
+            android:textColor="@color/button_material_dark"
+            android:id="@+id/textView_ADD_RUNTIME"
+            android:layout_below="@+id/textView_ADD_YEAR"
+            android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="GENRE:"
+            android:textSize="13sp"
+            android:textColor="@color/button_material_dark"
+            android:id="@+id/textView_MOVIE_GENRE"
+            android:layout_below="@+id/textView_ADD_RUNTIME"
+            android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="DIRECTOR:"
+            android:textSize="13sp"
+            android:textColor="@color/button_material_dark"
+            android:id="@+id/textView_ADD_DIRECTOR"
+            android:layout_below="@+id/textView_MOVIE_GENRE"
+            android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
+
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

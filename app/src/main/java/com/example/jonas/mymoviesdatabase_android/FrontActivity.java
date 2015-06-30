@@ -3,6 +3,7 @@ package com.example.jonas.mymoviesdatabase_android;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -43,11 +44,11 @@ public class FrontActivity extends ListActivity {
 
         switch (id) {
             case R.id.action_settings:
-                Intent in = new Intent(getApplicationContext(), AddMovieActivity.class);
+                Intent in = new Intent(getApplicationContext(), RecyclerViewActivity.class);
                 startActivity(in);
                 break;
             case R.id.action_searchMovie:
-                Intent in2 = new Intent(getApplicationContext(), SearchMovieActivity.class);
+                Intent in2 = new Intent(getApplicationContext(), SearchMovieActivity.class); //SearchMovieActivity
                 startActivity(in2);
                 break;
         }

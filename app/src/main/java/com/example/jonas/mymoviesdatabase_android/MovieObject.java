@@ -42,6 +42,8 @@ public class MovieObject implements Parcelable{
         this.imdbID = imdbID;
     }
 
+    public MovieObject(){}
+
     public String getTitle() {
         return Title;
     }
