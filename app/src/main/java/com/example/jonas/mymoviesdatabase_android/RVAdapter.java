@@ -1,6 +1,5 @@
 package com.example.jonas.mymoviesdatabase_android;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -66,7 +65,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
             public void onClick(View v) {
                 MovieObject MOVIE_TO_VIEW = allMovies.get(positionToClick);
 
-                Intent i = new Intent(v.getContext(), CardViewActivity.class);
+                Intent i = new Intent(v.getContext(), MovieDetailsActivity_CardView.class);
                 i.putExtra("OBJECT_ZERO", MOVIE_TO_VIEW);
                 v.getContext().startActivity(i);
             }

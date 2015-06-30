@@ -2,8 +2,8 @@ package com.example.jonas.mymoviesdatabase_android;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -14,12 +14,11 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import java.util.concurrent.ExecutionException;
 
-
-public class CardViewActivity extends Activity {
+public class MovieDetailsActivity_CardView extends Activity {
 
     private static final String TAG = "CARD_VIEW_ACTIVITY";
+    CardView cardview;
     Button button;
     ImageView poster;
     TextView textViewTitle;
@@ -37,13 +36,11 @@ public class CardViewActivity extends Activity {
     public MovieObject mo = new MovieObject();
     private boolean expanded = false;
     private boolean fromSearch = false;
-    private Gson gson;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        setContentView(R.layout.cardview_activity);
+        setContentView(R.layout.moviedetails_cardview_activity);
         initUI();
         fillUI();
     }
