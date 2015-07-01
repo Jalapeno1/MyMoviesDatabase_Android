@@ -10,8 +10,8 @@
         android:layout_width="match_parent" android:layout_height="match_parent">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="150dp"
+            android:layout_width="70dp"
+            android:layout_height="105dp"
             android:id="@+id/imageView_ADD_POSTER"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true"
@@ -19,10 +19,11 @@
 
         <TextView
             android:layout_width="fill_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
             android:text="Lord of The Rings: The Return of The King"
-            android:textSize="18sp"
+            android:textSize="14sp"
+            android:textStyle="bold"
             android:id="@+id/textView_ADD_TITLE"
             android:layout_alignParentTop="true"
             android:layout_toEndOf="@+id/imageView_ADD_POSTER" />

@@ -76,10 +76,10 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
         }
 
         if(movieViewHolder.movie_title != null){
-            if(allMovies.get(i).getTitle().length() < 46)
+            if(allMovies.get(i).getTitle().length() < 40)
                 movieViewHolder.movie_title.setText(allMovies.get(i).getTitle());
             else
-                movieViewHolder.movie_title.setText(allMovies.get(i).getTitle().substring(0, 43) + "...");
+                movieViewHolder.movie_title.setText(allMovies.get(i).getTitle().substring(0, 37) + "...");
         }
 
         if(movieViewHolder.movie_year != null){
