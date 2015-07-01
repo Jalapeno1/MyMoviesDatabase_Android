@@ -10,14 +10,9 @@
         android:label="Movies"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".FrontActivity"
+            android:name=".FrontActivityOLD"
             android:label="FrontActivity"
             android:theme="@android:style/Theme.Holo.Light" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".MovieDetailsActivity"
@@ -40,8 +35,14 @@
             android:label="@string/title_activity_card_view" >
         </activity>
         <activity
-            android:name=".RecyclerViewActivity"
-            android:label="@string/title_activity_recycler_view" >
+            android:name=".AllMoviesActivity"
+            android:label="@string/title_activity_recycler_view"
+            android:theme="@android:style/Theme.Holo.Light">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

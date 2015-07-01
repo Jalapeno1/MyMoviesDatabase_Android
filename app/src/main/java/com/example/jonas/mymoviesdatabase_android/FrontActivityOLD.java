@@ -3,7 +3,6 @@ package com.example.jonas.mymoviesdatabase_android;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -11,7 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import java.util.ArrayList;
 
-public class FrontActivity extends ListActivity {
+public class FrontActivityOLD extends ListActivity {
 
     public ArrayList<MovieObject> allMovies = new ArrayList<>();
     private Runnable listRunnable;
@@ -31,7 +30,7 @@ public class FrontActivity extends ListActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_front, menu);
+        inflater.inflate(R.menu.menu_front_old, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -44,7 +43,7 @@ public class FrontActivity extends ListActivity {
 
         switch (id) {
             case R.id.action_settings:
-                Intent in = new Intent(getApplicationContext(), RecyclerViewActivity.class);
+                Intent in = new Intent(getApplicationContext(), AllMoviesActivity.class);
                 startActivity(in);
                 break;
             case R.id.action_searchMovie:
