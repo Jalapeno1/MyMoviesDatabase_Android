@@ -36,7 +36,7 @@ public class MovieDetailsAdapter extends ArrayAdapter<MovieObject> {
 
         if(v == null){
             LayoutInflater inflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            v = inflater.inflate(R.layout.movie_details_layout, null);
+            v = inflater.inflate(R.layout.movie_details_layout, parent, false);
         }
 
         mo = movieObjects.get(position);
