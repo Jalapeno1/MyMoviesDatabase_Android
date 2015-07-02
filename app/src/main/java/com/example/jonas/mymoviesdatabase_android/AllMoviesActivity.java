@@ -10,7 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 
 public class AllMoviesActivity extends Activity {
 
@@ -32,8 +32,10 @@ public class AllMoviesActivity extends Activity {
                 db.addMovie(movies.get(i));
             }
             movies.clear();
+            DEVELOPER_MODE = false;
         }
         movies = db.getAll();
+        Collections.sort(movies, new Comparator_MovieTitle());
 
         rv=(RecyclerView)findViewById(R.id.rv);
 

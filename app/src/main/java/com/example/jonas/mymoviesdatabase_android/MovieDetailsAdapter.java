@@ -1,6 +1,7 @@
 package com.example.jonas.mymoviesdatabase_android;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -98,10 +99,27 @@ public class MovieDetailsAdapter extends ArrayAdapter<MovieObject> {
 
             if(fromSearch){
                 button.setText("Add");
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DBHandler db = new DBHandler(v.getContext(), null, null, 1);
+                        db.addMovie(mo);
+                        Intent in = new Intent(v.getContext(), AllMoviesActivity.class);
+                        v.getContext().startActivity(in);
+                    }
+                });
                 //add button listener
             } else if(!fromSearch){
                 button.setText("Delete");
-                //add button listener
+                button.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        DBHandler db = new DBHandler(v.getContext(), null, null, 1);
+                        db.deleteNote(mo.getImdbID());
+                        Intent in = new Intent(v.getContext(), AllMoviesActivity.class);
+                        v.getContext().startActivity(in);
+                    }
+                });
             }
 
 

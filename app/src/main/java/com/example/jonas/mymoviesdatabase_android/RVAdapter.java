@@ -83,31 +83,31 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
         }
 
         if(movieViewHolder.movie_year != null){
-            if(allMovies.get(i).getYear().length() < 25)
+            if(allMovies.get(i).getYear().length() < 35)
                 movieViewHolder.movie_year.setText("Release: " + allMovies.get(i).getYear());
             else
-                movieViewHolder.movie_year.setText("Release: " + allMovies.get(i).getYear().substring(0, 22) + "...");
+                movieViewHolder.movie_year.setText("Release: " + allMovies.get(i).getYear().substring(0, 32) + "...");
         }
 
         if(movieViewHolder.movie_runtime != null){
-            if(allMovies.get(i).getRuntime().length() < 25)
+            if(allMovies.get(i).getRuntime().length() < 35)
                 movieViewHolder.movie_runtime.setText("Runtime: " + allMovies.get(i).getRuntime());
             else
-                movieViewHolder.movie_runtime.setText("Runtime: " + allMovies.get(i).getRuntime().substring(0, 22) + "...");
+                movieViewHolder.movie_runtime.setText("Runtime: " + allMovies.get(i).getRuntime().substring(0, 32) + "...");
         }
 
         if(movieViewHolder.movie_genre != null){
-            if(allMovies.get(i).getGenre().length() < 25)
+            if(allMovies.get(i).getGenre().length() < 35)
                 movieViewHolder.movie_genre.setText("Genre: " + allMovies.get(i).getGenre());
             else
-                movieViewHolder.movie_genre.setText("Genre: " + allMovies.get(i).getGenre().substring(0, 22) + "...");
+                movieViewHolder.movie_genre.setText("Genre: " + allMovies.get(i).getGenre().substring(0, 32) + "...");
         }
 
         if(movieViewHolder.movie_director != null){
-            if(allMovies.get(i).getDirector().length() < 25)
+            if(allMovies.get(i).getDirector().length() < 35)
                 movieViewHolder.movie_director.setText("Directed by " + allMovies.get(i).getDirector());
             else
-                movieViewHolder.movie_director.setText("Directed by " + allMovies.get(i).getDirector().substring(0, 22) + "...");
+                movieViewHolder.movie_director.setText("Directed by " + allMovies.get(i).getDirector().substring(0, 32) + "...");
         }
     }
 
