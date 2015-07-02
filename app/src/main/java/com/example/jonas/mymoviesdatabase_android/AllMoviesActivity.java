@@ -14,14 +14,26 @@ import java.util.List;
 
 public class AllMoviesActivity extends Activity {
 
-    private List<MovieObject> movies;
+    private ArrayList<MovieObject> movies;
     private RecyclerView rv;
+
+    private static boolean DEVELOPER_MODE = true; //Clear DB
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.recyclerview_activity);
+
+        DBHandler db = new DBHandler(this, null, null, 1);
+        if(DEVELOPER_MODE){
+            db.deleteAll();
+            initializeData();
+            for (int i = 0; movies.size() > i; i++){
+                db.addMovie(movies.get(i));
+            }
+            movies.clear();
+        }
+        movies = db.getAll();
 
         rv=(RecyclerView)findViewById(R.id.rv);
 
@@ -29,7 +41,6 @@ public class AllMoviesActivity extends Activity {
         rv.setLayoutManager(llm);
         rv.setHasFixedSize(true);
 
-        initializeData();
         initializeAdapter();
     }
 
