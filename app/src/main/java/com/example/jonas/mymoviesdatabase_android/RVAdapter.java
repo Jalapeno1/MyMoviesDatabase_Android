@@ -1,13 +1,20 @@
 package com.example.jonas.mymoviesdatabase_android;
 
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -16,6 +23,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
 
         CardView cv;
+
+        ImageButton imgButton;
 
         ImageView movie_poster;
         TextView movie_title;
@@ -27,6 +36,8 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
         MovieViewHolder(View itemView) {
             super(itemView);
             cv = (CardView)itemView.findViewById(R.id.cv);
+
+            imgButton = (ImageButton) itemView.findViewById(R.id.imgButtonDelete);
 
             movie_poster = (ImageView) itemView.findViewById(R.id.imageView_ADD_POSTER);
             movie_title = (TextView) itemView.findViewById(R.id.textView_ADD_TITLE);
@@ -57,7 +68,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(MovieViewHolder movieViewHolder, int i) {
+    public void onBindViewHolder(MovieViewHolder movieViewHolder, final int i) {
 
         final int positionToClick = i;
         movieViewHolder.cv.setOnClickListener(new View.OnClickListener() {
@@ -109,6 +120,34 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
             else
                 movieViewHolder.movie_director.setText("Directed by " + allMovies.get(i).getDirector().substring(0, 32) + "...");
         }
+
+        movieViewHolder.imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final View v = view;
+                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                builder.setTitle("Delete?");
+                builder.setMessage("Are you sure?") ;
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DBHandler db = new DBHandler(v.getContext(), null, null, 1);
+                        db.deleteNote(allMovies.get(i).getImdbID());
+                        Context con = v.getContext();
+                        ((Activity) con).finish();
+                        con.startActivity(((Activity) con).getIntent());
+                        Toast.makeText(v.getContext(), "Movie deleted...",
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
+                builder.setNegativeButton("No", null);
+                AlertDialog ad = builder.create();
+                ad.setCanceledOnTouchOutside(true);
+                ad.show();
+
+
+            }
+        });
     }
 
     @Override

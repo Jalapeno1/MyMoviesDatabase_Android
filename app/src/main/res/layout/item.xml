@@ -7,7 +7,8 @@
     android:id="@+id/cv">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent" android:layout_height="match_parent">
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:id="@+id/rel_layout">
 
         <ImageView
             android:layout_width="70dp"
@@ -20,7 +21,7 @@
         <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
+            android:layout_marginTop="20dp"
             android:text="Lord of The Rings: The Return of The King"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -67,6 +68,14 @@
             android:id="@+id/textView_ADD_DIRECTOR"
             android:layout_below="@+id/textView_MOVIE_GENRE"
             android:layout_toEndOf="@+id/imageView_ADD_POSTER" />
+
+        <ImageButton
+            android:id="@+id/imgButtonDelete"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/ic_clear_search_api_disabled_holo_light"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
 
 
     </RelativeLayout>
