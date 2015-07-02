@@ -4,4 +4,8 @@
     tools:context="com.example.jonas.mymoviesdatabase_android.AllMoviesActivity">
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_searchmov" android:title="search movie"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/action_addmovieactivity" android:title="add movie activity"
+        android:orderInCategory="100" app:showAsAction="never" />
 </menu>

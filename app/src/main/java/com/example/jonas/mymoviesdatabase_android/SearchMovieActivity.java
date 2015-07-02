@@ -39,7 +39,7 @@ public class SearchMovieActivity extends ActionBarActivity {
                 Log.d(TAG, mSearchYear);
 
                 //Intent intent = new Intent(getApplicationContext(), AddMovieActivity.class);
-                Intent intent = new Intent(getApplicationContext(), MovieDetailsActivity_CardView.class); //AddMovieActivityNEW
+                Intent intent = new Intent(getApplicationContext(), AddMovieActivityNEW.class); //AddMovieActivityNEW
                 intent.putExtra("SEARCH_TITLE", mSearchTitle);
                 intent.putExtra("SEARCH_YEAR", mSearchYear);
                 startActivity(intent);

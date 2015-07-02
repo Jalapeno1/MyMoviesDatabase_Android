@@ -49,9 +49,13 @@ public class AllMoviesActivity extends Activity {
                 Intent in = new Intent(getApplicationContext(), AllMoviesActivity.class);
                 startActivity(in);
                 break;
-            case R.id.action_searchMovie:
-                Intent in2 = new Intent(getApplicationContext(), MovieDetailsActivity_CardView.class); //SearchMovieActivity
+            case R.id.action_searchmov:
+                Intent in2 = new Intent(getApplicationContext(), SearchMovieActivity.class);
                 startActivity(in2);
+                break;
+            case R.id.action_addmovieactivity:
+                Intent in3 = new Intent(getApplicationContext(), AddMovieActivityNEW.class);
+                startActivity(in3);
                 break;
         }
 

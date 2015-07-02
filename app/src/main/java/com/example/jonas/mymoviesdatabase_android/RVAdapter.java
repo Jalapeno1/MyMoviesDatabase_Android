@@ -65,7 +65,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
             public void onClick(View v) {
                 MovieObject MOVIE_TO_VIEW = allMovies.get(positionToClick);
 
-                Intent i = new Intent(v.getContext(), MovieDetailsActivity_CardView.class);
+                Intent i = new Intent(v.getContext(), MovieDetailsActivity.class);
                 i.putExtra("OBJECT_ZERO", MOVIE_TO_VIEW);
                 v.getContext().startActivity(i);
             }

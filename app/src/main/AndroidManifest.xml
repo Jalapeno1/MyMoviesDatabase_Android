@@ -10,17 +10,8 @@
         android:label="Movies"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".FrontActivityOLD"
-            android:label="FrontActivity"
-            android:theme="@android:style/Theme.Holo.Light" >
-        </activity>
-        <activity
             android:name=".MovieDetailsActivity"
             android:label="@string/title_activity_movie_details" >
-        </activity>
-        <activity
-            android:name=".AddMovieActivity"
-            android:label="@string/title_activity_add_movie" >
         </activity>
         <activity
             android:name=".SearchMovieActivity"
@@ -29,10 +20,6 @@
         <activity
             android:name=".AddMovieActivityNEW"
             android:label="@string/title_activity_add_movie_activity_new" >
-        </activity>
-        <activity
-            android:name=".MovieDetailsActivity_CardView"
-            android:label="@string/title_activity_card_view" >
         </activity>
         <activity
             android:name=".AllMoviesActivity"
