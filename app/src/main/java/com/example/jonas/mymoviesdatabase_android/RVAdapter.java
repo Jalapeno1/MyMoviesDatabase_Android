@@ -133,9 +133,9 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
                     public void onClick(DialogInterface dialog, int which) {
                         DBHandler db = new DBHandler(v.getContext(), null, null, 1);
                         db.deleteNote(allMovies.get(i).getImdbID());
-                        Context con = v.getContext();
-                        ((Activity) con).finish();
-                        con.startActivity(((Activity) con).getIntent());
+                        allMovies.remove(allMovies.get(i));
+                        notifyItemRemoved(i+1);
+                        notifyDataSetChanged();
                         Toast.makeText(v.getContext(), "Movie deleted...",
                                 Toast.LENGTH_LONG).show();
                     }
