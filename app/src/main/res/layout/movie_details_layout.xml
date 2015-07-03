@@ -39,162 +39,207 @@
         android:layout_below="@+id/cv">
 
         <RelativeLayout
+            android:id="@+id/layout1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/layout0">
 
-            <RelativeLayout
-                android:id="@+id/layout1"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Lord of The Rings: The Return of The King"
-                    android:textSize="22sp"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="10dp"
-                    android:id="@+id/textView_ADD_TITLE"
-
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="YEAR:"
-                    android:textSize="16sp"
-                    android:id="@+id/textView_ADD_YEAR"
-                    android:layout_below="@+id/textView_ADD_TITLE"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="RUNTIME:"
-                    android:textSize="16sp"
-                    android:id="@+id/textView_ADD_RUNTIME"
-                    android:layout_below="@+id/textView_ADD_YEAR"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="RATED:"
-                    android:textSize="16sp"
-                    android:id="@+id/textView_ADD_RATED"
-                    android:layout_below="@+id/textView_ADD_RUNTIME"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="DIRECTOR:"
-                    android:textSize="16sp"
-                    android:id="@+id/textView_ADD_DIRECTOR"
-                    android:layout_below="@+id/textView_ADD_RATED"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/layout2"
+            <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout1">
+                android:text="Lord of The Rings: The Return of The King"
+                android:textSize="22sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:id="@+id/textView_ADD_TITLE"
+                android:layout_margin="4dp"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"/>
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="SYNOPSIS"
-                    android:textSize="13sp"
-                    android:textStyle="italic"
-                    android:paddingTop="7dp"
-                    android:paddingBottom="7dp"
-                    android:background="@android:color/darker_gray"
-                    android:textColor="@android:color/white"
-                    android:id="@+id/textView_ADD_PLOT"
-                    android:layout_alignParentStart="true"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/layout3"
+            <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/layout2">
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="ACTORS"
-                    android:textSize="16sp"
-                    android:id="@+id/textView_ADD_ACTORS"
-                    android:layout_alignParentStart="true"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
+                android:text="YEAR:"
+                android:textSize="16sp"
+                android:id="@+id/textView_ADD_YEAR"
+                android:layout_below="@+id/textView_ADD_TITLE"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_margin="4dp"/>
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="WRITERS"
-                    android:textSize="16sp"
-                    android:id="@+id/textView_ADD_WRITERS"
-                    android:layout_below="@+id/textView_ADD_ACTORS"
-                    android:layout_alignParentStart="true"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="RUNTIME:"
+                android:textSize="16sp"
+                android:id="@+id/textView_ADD_RUNTIME"
+                android:layout_below="@+id/textView_ADD_YEAR"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_margin="4dp"/>
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="GENRE"
-                    android:textSize="16sp"
-                    android:id="@+id/textView_ADD_GENRE"
-                    android:layout_below="@+id/textView_ADD_WRITERS"
-                    android:layout_alignParentStart="true"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="RATED:"
+                android:textSize="16sp"
+                android:id="@+id/textView_ADD_RATED"
+                android:layout_below="@+id/textView_ADD_RUNTIME"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_margin="4dp"/>
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="IMDB RATING"
-                    android:textSize="16sp"
-                    android:id="@+id/textView_ADD_IMDB_RATING"
-                    android:layout_below="@+id/textView_ADD_GENRE"
-                    android:layout_alignParentStart="true"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="DIRECTOR:"
+                android:textSize="16sp"
+                android:id="@+id/textView_ADD_DIRECTOR"
+                android:layout_below="@+id/textView_ADD_RATED"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_marginRight="6dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginBottom="10dp"/>
 
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="COUNTRY"
-                    android:textSize="16sp"
-                    android:id="@+id/textView_ADD_COUNTRY"
-                    android:layout_below="@+id/textView_ADD_IMDB_RATING"
-                    android:layout_alignParentStart="true"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
-
-                <Button
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:text="New Button"
-                    android:id="@+id/buttonADD"
-                    android:layout_below="@+id/textView_ADD_COUNTRY"
-                    android:layout_alignParentStart="true"
-                    android:paddingLeft="@dimen/activity_horizontal_margin"
-                    android:paddingRight="@dimen/activity_horizontal_margin"/>
-
-            </RelativeLayout>
         </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv3"
+        card_view:cardUseCompatPadding="true"
+        android:layout_below="@+id/cv2">
+
+        <RelativeLayout
+            android:id="@+id/layout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout1">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="SYNOPSIS"
+                android:textSize="13sp"
+                android:textStyle="italic"
+                android:paddingTop="7dp"
+                android:paddingBottom="7dp"
+                android:background="@android:color/darker_gray"
+                android:textColor="@android:color/white"
+                android:id="@+id/textView_ADD_PLOT"
+                android:layout_alignParentStart="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"/>
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cv4"
+        card_view:cardUseCompatPadding="true"
+        android:layout_below="@+id/cv3">
+
+        <RelativeLayout
+            android:id="@+id/layout3"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout2">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="ACTORS"
+                android:textSize="16sp"
+                android:id="@+id/textView_ADD_ACTORS"
+                android:layout_alignParentStart="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_margin="4dp"/>
+
+            <View
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/viewLine"
+                android:layout_below="@+id/textView_ADD_ACTORS"
+                android:background="#c0c0c0"
+                android:layout_margin="4dp"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="WRITERS"
+                android:textSize="16sp"
+                android:id="@+id/textView_ADD_WRITERS"
+                android:layout_below="@+id/viewLine"
+                android:layout_alignParentStart="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_margin="4dp"/>
+
+            <View
+                android:layout_width="250dp"
+                android:layout_height="1dp"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/viewLine2"
+                android:layout_below="@+id/textView_ADD_WRITERS"
+                android:background="#c0c0c0"
+                android:layout_margin="4dp"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="GENRE"
+                android:textSize="16sp"
+                android:id="@+id/textView_ADD_GENRE"
+                android:layout_below="@+id/viewLine2"
+                android:layout_alignParentStart="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_margin="4dp"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="IMDB RATING"
+                android:textSize="16sp"
+                android:id="@+id/textView_ADD_IMDB_RATING"
+                android:layout_below="@+id/textView_ADD_GENRE"
+                android:layout_alignParentStart="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_margin="4dp"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="COUNTRY"
+                android:textSize="16sp"
+                android:id="@+id/textView_ADD_COUNTRY"
+                android:layout_below="@+id/textView_ADD_IMDB_RATING"
+                android:layout_alignParentStart="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_margin="4dp"/>
+
+            <Button
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="New Button"
+                android:id="@+id/buttonADD"
+                android:layout_below="@+id/textView_ADD_COUNTRY"
+                android:layout_alignParentStart="true"
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:paddingRight="@dimen/activity_horizontal_margin"
+                android:layout_margin="4dp"/>
+
+        </RelativeLayout>
+
     </android.support.v7.widget.CardView>
 </RelativeLayout>

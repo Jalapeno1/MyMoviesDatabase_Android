@@ -17,7 +17,7 @@ public class AllMoviesActivity extends Activity {
     private ArrayList<MovieObject> movies;
     private RecyclerView rv;
 
-    private static boolean DEVELOPER_MODE = true; //Clear DB
+    private static boolean DEVELOPER_MODE = false; //Clear DB
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
