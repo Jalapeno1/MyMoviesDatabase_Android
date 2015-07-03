@@ -29,6 +29,9 @@
             <item
                 android:id="@+id/menuSortReleaseOld"
                 android:title="Sort by release (oldest first)" />
+            <item
+                android:id="@+id/menuSortRuntime"
+                android:title="Sort by runtime" />
         </menu>
 
     </item>

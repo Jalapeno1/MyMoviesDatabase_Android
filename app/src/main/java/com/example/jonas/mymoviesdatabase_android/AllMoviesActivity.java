@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import com.example.jonas.mymoviesdatabase_android.Comparators.Comparator_IMDB_Rating;
 import com.example.jonas.mymoviesdatabase_android.Comparators.Comparator_MovieTitle;
 import com.example.jonas.mymoviesdatabase_android.Comparators.Comparator_Release;
+import com.example.jonas.mymoviesdatabase_android.Comparators.Comparator_Runtime;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -21,9 +22,9 @@ public class AllMoviesActivity extends Activity {
     private ArrayList<MovieObject> movies;
     private RecyclerView rv;
 
-    private static boolean DEVELOPER_MODE = false; //select true to clear DB on startup
+    private static boolean DEVELOPER_MODE = false; //select true to clear DB and add test data on startup
 
-    private static int sortID = 1;
+    private static int sortID = 1; //default
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,7 @@ public class AllMoviesActivity extends Activity {
         DBHandler db = new DBHandler(this, null, null, 1);
         if(DEVELOPER_MODE){
             db.deleteAll();
-            initializeData();
+            initializeTestData();
             for (int i = 0; movies.size() > i; i++){
                 db.addMovie(movies.get(i));
             }
@@ -91,6 +92,10 @@ public class AllMoviesActivity extends Activity {
                 sortID = 4;
                 initializeAdapter();
                 break;
+            case R.id.menuSortRuntime:
+                sortID = 5;
+                initializeAdapter();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
@@ -111,10 +116,13 @@ public class AllMoviesActivity extends Activity {
             case 4:
                 Collections.sort(movies, new Comparator_Release()); //Oldest first
                 break;
+            case 5:
+                Collections.sort(movies, new Comparator_Runtime());
+                break;
         }
     }
 
-    private void initializeData(){
+    private void initializeTestData(){
         movies = new ArrayList<>();
         MovieObject mo1, mo2, mo3, mo4, mo5, mo6, mo7, mo8;
 
