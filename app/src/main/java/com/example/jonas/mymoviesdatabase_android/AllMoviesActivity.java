@@ -9,6 +9,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.jonas.mymoviesdatabase_android.Comparators.Comparator_IMDB_Rating;
+import com.example.jonas.mymoviesdatabase_android.Comparators.Comparator_MovieTitle;
+import com.example.jonas.mymoviesdatabase_android.Comparators.Comparator_Release;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -17,7 +21,7 @@ public class AllMoviesActivity extends Activity {
     private ArrayList<MovieObject> movies;
     private RecyclerView rv;
 
-    private static boolean DEVELOPER_MODE = false; //Clear DB
+    private static boolean DEVELOPER_MODE = false; //select true to clear DB on startup
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +39,10 @@ public class AllMoviesActivity extends Activity {
             DEVELOPER_MODE = false;
         }
         movies = db.getAll();
-        Collections.sort(movies, new Comparator_MovieTitle());
+        //Collections.sort(movies, new Comparator_MovieTitle());
+        //Collections.sort(movies, Collections.reverseOrder(new Comparator_IMDB_Rating()));
+        //Collections.sort(movies, new Comparator_Release()); //Oldest first
+        Collections.sort(movies, Collections.reverseOrder(new Comparator_Release())); //Newest first
 
         rv=(RecyclerView)findViewById(R.id.rv);
 

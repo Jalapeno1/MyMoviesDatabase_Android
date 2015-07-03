@@ -1,4 +1,6 @@
-package com.example.jonas.mymoviesdatabase_android;
+package com.example.jonas.mymoviesdatabase_android.Comparators;
+
+import com.example.jonas.mymoviesdatabase_android.MovieObject;
 
 import java.util.Comparator;
 
