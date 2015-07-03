@@ -23,6 +23,8 @@ public class AllMoviesActivity extends Activity {
 
     private static boolean DEVELOPER_MODE = false; //select true to clear DB on startup
 
+    private static int sortID = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,10 +41,6 @@ public class AllMoviesActivity extends Activity {
             DEVELOPER_MODE = false;
         }
         movies = db.getAll();
-        //Collections.sort(movies, new Comparator_MovieTitle());
-        //Collections.sort(movies, Collections.reverseOrder(new Comparator_IMDB_Rating()));
-        //Collections.sort(movies, new Comparator_Release()); //Oldest first
-        Collections.sort(movies, Collections.reverseOrder(new Comparator_Release())); //Newest first
 
         rv=(RecyclerView)findViewById(R.id.rv);
 
@@ -77,9 +75,43 @@ public class AllMoviesActivity extends Activity {
                 Intent in3 = new Intent(getApplicationContext(), AddMovieActivityNEW.class);
                 startActivity(in3);
                 break;
+            case R.id.menuSortAlph:
+                sortID = 1;
+                initializeAdapter();
+                break;
+            case R.id.menuSortRating:
+                sortID = 2;
+                initializeAdapter();
+                break;
+            case R.id.menuSortReleaseNew:
+                sortID = 3;
+                initializeAdapter();
+                break;
+            case R.id.menuSortReleaseOld:
+                sortID = 4;
+                initializeAdapter();
+                break;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void getComparator(int num){
+
+        switch (num) {
+            case 1:
+                Collections.sort(movies, new Comparator_MovieTitle());
+                break;
+            case 2:
+                Collections.sort(movies, Collections.reverseOrder(new Comparator_IMDB_Rating()));
+                break;
+            case 3:
+                Collections.sort(movies, Collections.reverseOrder(new Comparator_Release())); //Newest first
+                break;
+            case 4:
+                Collections.sort(movies, new Comparator_Release()); //Oldest first
+                break;
+        }
     }
 
     private void initializeData(){
@@ -107,6 +139,7 @@ public class AllMoviesActivity extends Activity {
     }
 
     private void initializeAdapter(){
+        getComparator(sortID);
         RVAdapter adapter = new RVAdapter(movies);
         rv.setAdapter(adapter);
     }

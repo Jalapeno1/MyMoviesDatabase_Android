@@ -2,10 +2,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.jonas.mymoviesdatabase_android.AllMoviesActivity">
+
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_searchmov" android:title="search movie"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_addmovieactivity" android:title="add movie activity"
         android:orderInCategory="100" app:showAsAction="never" />
+
+    <item android:id="@+id/topmenu_sort"
+        android:title="Sort"
+        android:showAsAction="always"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        >
+
+        <menu>
+            <item
+                android:id="@+id/menuSortAlph"
+                android:title="Sort alphabetically" />
+            <item
+                android:id="@+id/menuSortRating"
+                android:title="Sort by IMDB rating" />
+            <item
+                android:id="@+id/menuSortReleaseNew"
+                android:title="Sort by release (newest first)" />
+            <item
+                android:id="@+id/menuSortReleaseOld"
+                android:title="Sort by release (oldest first)" />
+        </menu>
+
+    </item>
 </menu>
