@@ -2,6 +2,7 @@ package com.example.jonas.mymoviesdatabase_android;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -99,6 +100,7 @@ public class MovieDetailsAdapter extends ArrayAdapter<MovieObject> {
 
             if(fromSearch){
                 button.setText("Add");
+                button.setBackgroundColor(0xFF689F38);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -108,9 +110,9 @@ public class MovieDetailsAdapter extends ArrayAdapter<MovieObject> {
                         v.getContext().startActivity(in);
                     }
                 });
-                //add button listener
             } else if(!fromSearch){
                 button.setText("Delete");
+                button.setBackgroundColor(0xFFB71C1C);
                 button.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {

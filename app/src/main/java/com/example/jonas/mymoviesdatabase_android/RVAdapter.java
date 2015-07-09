@@ -39,6 +39,19 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
 
             imgButton = (ImageButton) itemView.findViewById(R.id.imgButtonDelete);
 
+//            imgButton.setVisibility(itemView.GONE);
+//            cv.setOnLongClickListener(new View.OnLongClickListener() {
+//                @Override
+//                public boolean onLongClick(View v) {
+//                    if (imgButton.getVisibility() == v.GONE) {
+//                        imgButton.setVisibility(v.VISIBLE);
+//                    } else {
+//                        imgButton.setVisibility(v.GONE);
+//                    }
+//                    return true;
+//                }
+//            });
+
             movie_poster = (ImageView) itemView.findViewById(R.id.imageView_ADD_POSTER);
             movie_title = (TextView) itemView.findViewById(R.id.textView_ADD_TITLE);
             movie_year = (TextView) itemView.findViewById(R.id.textView_ADD_YEAR);
@@ -68,7 +81,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(MovieViewHolder movieViewHolder, final int i) {
+    public void onBindViewHolder(final MovieViewHolder movieViewHolder, final int i) {
 
         final int positionToClick = i;
         movieViewHolder.cv.setOnClickListener(new View.OnClickListener() {

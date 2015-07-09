@@ -1,10 +1,23 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme"  parent="Theme.AppCompat.Light">
-    <!-- colorPrimary is used for the default action bar background -->
-    <item name="android:colorPrimary">@color/primary_dark_material_dark</item>
+    <!--<style name="AppTheme"  parent="Theme.AppCompat.Light">-->
+    <!--&lt;!&ndash; colorPrimary is used for the default action bar background &ndash;&gt;-->
+    <!--<item name="colorPrimary">@color/material_blue_grey_900</item>-->
 
+    <!--</style>-->
+
+    <style name="AppBaseTheme" parent="ThemeOverlay.AppCompat.Dark">
+        <item name="android:windowBackground">@color/background_floating_material_light</item>
+        <item name="android:actionBarStyle">@style/GreenActionBar</item>
     </style>
+    <style name="AppTheme" parent="AppBaseTheme"/>
+
+    <style name="GreenActionBarBase" parent="@android:style/Widget.Holo.ActionBar.Solid">
+        <item name="android:background">@android:color/holo_green_dark</item>
+    </style>
+
+    <style name="GreenActionBar" parent="GreenActionBarBase"/>
+
 
 </resources>

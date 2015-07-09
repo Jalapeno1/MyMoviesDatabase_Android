@@ -8,7 +8,7 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="Movies"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppBaseTheme" >
         <activity
             android:name=".MovieDetailsActivity"
             android:label="@string/title_activity_movie_details" >
@@ -23,8 +23,7 @@
         </activity>
         <activity
             android:name=".AllMoviesActivity"
-            android:label="Front"
-            android:theme="@android:style/Theme.Holo.Light">
+            android:label="Front">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
