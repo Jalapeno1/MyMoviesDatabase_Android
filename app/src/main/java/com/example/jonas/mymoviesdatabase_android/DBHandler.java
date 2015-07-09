@@ -14,7 +14,7 @@ import java.util.ArrayList;
  */
 public class DBHandler  extends SQLiteOpenHelper {
 
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "movieDB.db";
     private static final String TABLE_MOVIES = "movies";
 
@@ -54,7 +54,7 @@ public class DBHandler  extends SQLiteOpenHelper {
                 + COLUMN_COUNTRY + " TEXT,"
                 + COLUMN_POSTER + " TEXT,"
                 + COLUMN_IMDB_RATING + " TEXT,"
-                + COLUMN_IMDB_ID + " TEXT"
+                + COLUMN_IMDB_ID + " TEXT UNIQUE"
                 + ")";
         db.execSQL(CREATE_MOVIES_TABLE);
     }
@@ -86,7 +86,7 @@ public class DBHandler  extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        db.insert(TABLE_MOVIES, null, values);
+        db.insertWithOnConflict(TABLE_MOVIES, null, values, SQLiteDatabase.CONFLICT_REPLACE);
         db.close();
     }
 
