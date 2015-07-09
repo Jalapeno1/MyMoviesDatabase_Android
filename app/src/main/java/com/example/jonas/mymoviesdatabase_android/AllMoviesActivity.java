@@ -103,7 +103,7 @@ public class AllMoviesActivity extends Activity {
 
 
         if(grid){
-            GridLayoutManager glm = new GridLayoutManager(this,5);
+            GridLayoutManager glm = new GridLayoutManager(this,3);
             rv.setLayoutManager(glm);
         } else {
             LinearLayoutManager llm = new LinearLayoutManager(this);

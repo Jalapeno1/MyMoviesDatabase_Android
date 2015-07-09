@@ -94,17 +94,14 @@ public class RVAdapterGridView extends RecyclerView.Adapter<RVAdapterGridView.Mo
         }
 
         if(movieViewHolder.movie_title != null){
-            if(allMovies.get(i).getTitle().length() < 24)
+            if(allMovies.get(i).getTitle().length() < 30)
                 movieViewHolder.movie_title.setText(allMovies.get(i).getTitle());
             else
-                movieViewHolder.movie_title.setText(allMovies.get(i).getTitle().substring(0, 21) + "...");
+                movieViewHolder.movie_title.setText(allMovies.get(i).getTitle().substring(0, 27) + "...");
         }
 
         if(movieViewHolder.movie_year != null){
-            if(allMovies.get(i).getYear().length() < 35)
-                movieViewHolder.movie_year.setText(allMovies.get(i).getYear());
-            else
-                movieViewHolder.movie_year.setText(allMovies.get(i).getYear().substring(0, 32) + "...");
+            movieViewHolder.movie_year.setText(allMovies.get(i).getYear());
         }
 
 //        movieViewHolder.imgButton.setOnClickListener(new View.OnClickListener() {
