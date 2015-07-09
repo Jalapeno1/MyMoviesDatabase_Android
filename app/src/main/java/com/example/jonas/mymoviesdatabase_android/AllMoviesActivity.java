@@ -26,6 +26,7 @@ public class AllMoviesActivity extends Activity {
     private static boolean DEVELOPER_MODE = false; //select true to clear DB and add test data on startup
 
     private static int sortID = 1; //default
+    private static boolean setGridView = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +44,7 @@ public class AllMoviesActivity extends Activity {
             DEVELOPER_MODE = false;
         }
         movies = db.getAll();
-        selectLayoutManager();
+        selectLayoutManager(setGridView);
     }
 
     @Override
@@ -66,47 +67,52 @@ public class AllMoviesActivity extends Activity {
                 Intent in2 = new Intent(getApplicationContext(), SearchMovieActivity.class);
                 startActivity(in2);
                 break;
-            case R.id.action_addmovieactivity:
-                Intent in3 = new Intent(getApplicationContext(), AddMovieActivityNEW.class);
-                startActivity(in3);
+            case R.id.action_changeview:
+                if(setGridView){
+                    setGridView = false;
+                } else { setGridView = true; }
+                selectLayoutManager(setGridView);
                 break;
             case R.id.menuSortAlph:
                 sortID = 1;
-                initializeAdapter();
+                initializeAdapter(setGridView);
                 break;
             case R.id.menuSortRating:
                 sortID = 2;
-                initializeAdapter();
+                initializeAdapter(setGridView);
                 break;
             case R.id.menuSortReleaseNew:
                 sortID = 3;
-                initializeAdapter();
+                initializeAdapter(setGridView);
                 break;
             case R.id.menuSortReleaseOld:
                 sortID = 4;
-                initializeAdapter();
+                initializeAdapter(setGridView);
                 break;
             case R.id.menuSortRuntime:
                 sortID = 5;
-                initializeAdapter();
+                initializeAdapter(setGridView);
                 break;
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    private void selectLayoutManager(){
+    private void selectLayoutManager(boolean grid){
         rv=(RecyclerView)findViewById(R.id.rv);
 
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        rv.setLayoutManager(llm);
 
-//        GridLayoutManager glm = new GridLayoutManager(this,3);
-//        rv.setLayoutManager(glm);
+        if(grid){
+            GridLayoutManager glm = new GridLayoutManager(this,5);
+            rv.setLayoutManager(glm);
+        } else {
+            LinearLayoutManager llm = new LinearLayoutManager(this);
+            rv.setLayoutManager(llm);
+        }
 
         rv.setHasFixedSize(true);
 
-        initializeAdapter();
+        initializeAdapter(setGridView);
     }
 
     private void getComparator(int num){
@@ -154,9 +160,16 @@ public class AllMoviesActivity extends Activity {
         movies.add(mo8);
     }
 
-    private void initializeAdapter(){
+    private void initializeAdapter(boolean grid){
+
         getComparator(sortID);
-        RVAdapter adapter = new RVAdapter(movies);
-        rv.setAdapter(adapter);
+
+        if(grid){
+            RVAdapterGridView adapter = new RVAdapterGridView(movies);
+            rv.setAdapter(adapter);
+        } else {
+            RVAdapter adapter = new RVAdapter(movies);
+            rv.setAdapter(adapter);
+        }
     }
 }

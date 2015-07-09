@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="126dp" android:layout_height="wrap_content"
+        android:id="@+id/rel_layout"
+        android:layout_centerHorizontal="true">
+
+        <ImageView
+            android:layout_width="66dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageView_ADD_POSTER"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Lord of the Rings: The Fellowship of The Ring"
+            android:textColor="@android:color/black"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:id="@+id/textView_ADD_TITLE"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/imageView_ADD_POSTER"/>
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="YEAR:"
+            android:textSize="9sp"
+            android:textColor="@color/button_material_dark"
+            android:id="@+id/textView_ADD_YEAR"
+            android:layout_marginLeft="6dp"
+            android:layout_marginRight="6dp"
+            android:layout_marginBottom="6dp"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/textView_ADD_TITLE"/>
+
+        <!--<ImageButton-->
+            <!--android:id="@+id/imgButtonDelete"-->
+            <!--android:layout_width="25dp"-->
+            <!--android:layout_height="25dp"-->
+            <!--android:background="@drawable/ic_clear_search_api_disabled_holo_light"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_alignParentEnd="true" />-->
+
+    </RelativeLayout>

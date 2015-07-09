@@ -7,7 +7,7 @@
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_searchmov" android:title="search movie"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/action_addmovieactivity" android:title="add movie activity"
+    <item android:id="@+id/action_changeview" android:title="Change View"
         android:orderInCategory="100" app:showAsAction="never" />
 
     <item android:id="@+id/topmenu_sort"
