@@ -3,6 +3,8 @@ package com.example.jonas.mymoviesdatabase_android;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -90,7 +92,7 @@ public class RVAdapterGridView extends RecyclerView.Adapter<RVAdapterGridView.Mo
         });
 
         if(movieViewHolder.movie_poster != null){
-            new DownloadImageManager(movieViewHolder.movie_poster).execute(allMovies.get(i).getPoster());
+            new DownloadRoundImageManager(movieViewHolder.movie_poster).execute(allMovies.get(i).getPoster());
         }
 
         if(movieViewHolder.movie_title != null){

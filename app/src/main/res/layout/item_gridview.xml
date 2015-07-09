@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="126dp" android:layout_height="wrap_content"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
         android:id="@+id/rel_layout"
         android:layout_centerHorizontal="true">
 
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="159dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:id="@+id/imageView_ADD_POSTER"
             android:layout_margin="6dp"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            />
 
         <TextView
             android:layout_width="match_parent"
