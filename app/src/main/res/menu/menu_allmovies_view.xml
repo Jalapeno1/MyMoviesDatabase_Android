@@ -5,7 +5,7 @@
 
     <item android:id="@+id/action_settings" android:title="@string/action_settings"
         android:orderInCategory="100" app:showAsAction="never" />
-    <item android:id="@+id/action_searchmov" android:title="search movie"
+    <item android:id="@+id/action_searchmov" android:title="Add Movie"
         android:orderInCategory="100" app:showAsAction="never" />
     <item android:id="@+id/action_changeview" android:title="Change View"
         android:orderInCategory="100" app:showAsAction="never" />
