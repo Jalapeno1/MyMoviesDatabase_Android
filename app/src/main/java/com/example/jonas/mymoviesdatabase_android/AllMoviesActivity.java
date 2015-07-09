@@ -3,6 +3,7 @@ package com.example.jonas.mymoviesdatabase_android;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
@@ -42,14 +43,7 @@ public class AllMoviesActivity extends Activity {
             DEVELOPER_MODE = false;
         }
         movies = db.getAll();
-
-        rv=(RecyclerView)findViewById(R.id.rv);
-
-        LinearLayoutManager llm = new LinearLayoutManager(this);
-        rv.setLayoutManager(llm);
-        rv.setHasFixedSize(true);
-
-        initializeAdapter();
+        selectLayoutManager();
     }
 
     @Override
@@ -99,6 +93,20 @@ public class AllMoviesActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void selectLayoutManager(){
+        rv=(RecyclerView)findViewById(R.id.rv);
+
+        LinearLayoutManager llm = new LinearLayoutManager(this);
+        rv.setLayoutManager(llm);
+
+//        GridLayoutManager glm = new GridLayoutManager(this,3);
+//        rv.setLayoutManager(glm);
+
+        rv.setHasFixedSize(true);
+
+        initializeAdapter();
     }
 
     private void getComparator(int num){

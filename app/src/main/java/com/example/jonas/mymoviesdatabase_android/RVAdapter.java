@@ -83,11 +83,10 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.MovieViewHolder> {
     @Override
     public void onBindViewHolder(final MovieViewHolder movieViewHolder, final int i) {
 
-        final int positionToClick = i;
         movieViewHolder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                MovieObject MOVIE_TO_VIEW = allMovies.get(positionToClick);
+                MovieObject MOVIE_TO_VIEW = allMovies.get(i);
 
                 Intent i = new Intent(v.getContext(), MovieDetailsActivity.class);
                 i.putExtra("OBJECT_ZERO", MOVIE_TO_VIEW);
