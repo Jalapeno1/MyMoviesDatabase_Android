@@ -2,6 +2,7 @@ package com.example.jonas.mymoviesdatabase_android;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -103,7 +104,14 @@ public class AllMoviesActivity extends Activity {
 
 
         if(grid){
-            GridLayoutManager glm = new GridLayoutManager(this,3);
+            int rows;
+
+            if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+                rows = 3;
+            } else {
+                rows = 5;
+            }
+            GridLayoutManager glm = new GridLayoutManager(this, rows);
             rv.setLayoutManager(glm);
         } else {
             LinearLayoutManager llm = new LinearLayoutManager(this);

@@ -43,6 +43,7 @@ public class DownloadRoundImageManager extends AsyncTask<String, Void, Bitmap> {
             final Rect rect = new Rect(0, 0, mIcon11.getWidth(), mIcon11.getWidth());
             final RectF rectF = new RectF(rect);
             final float roundPx = 500;
+            Log.d("ROUDNPIXELS", Integer.toString(output.getHeight()));
 
             paint.setAntiAlias(true);
             canvas.drawARGB(0, 0, 0, 0);

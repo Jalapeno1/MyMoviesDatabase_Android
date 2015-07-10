@@ -37,7 +37,7 @@ public class RVAdapterGridView extends RecyclerView.Adapter<RVAdapterGridView.Mo
             super(itemView);
             rl = (RelativeLayout)itemView.findViewById(R.id.rel_layout);
 
-            //imgButton = (ImageButton) itemView.findViewById(R.id.imgButtonDelete);
+            imgButton = (ImageButton) itemView.findViewById(R.id.imgButtonDelete);
 
 //            imgButton.setVisibility(itemView.GONE);
 //            rl.setOnLongClickListener(new View.OnLongClickListener() {
@@ -96,41 +96,41 @@ public class RVAdapterGridView extends RecyclerView.Adapter<RVAdapterGridView.Mo
         }
 
         if(movieViewHolder.movie_title != null){
-            if(allMovies.get(i).getTitle().length() < 30)
+            if(allMovies.get(i).getTitle().length() < 26)
                 movieViewHolder.movie_title.setText(allMovies.get(i).getTitle());
             else
-                movieViewHolder.movie_title.setText(allMovies.get(i).getTitle().substring(0, 27) + "...");
+                movieViewHolder.movie_title.setText(allMovies.get(i).getTitle().substring(0, 23) + "...");
         }
 
         if(movieViewHolder.movie_year != null){
             movieViewHolder.movie_year.setText(allMovies.get(i).getYear());
         }
 
-//        movieViewHolder.imgButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                final View v = view;
-//                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
-//                builder.setTitle("Delete?");
-//                builder.setMessage("Are you sure?") ;
-//                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        DBHandler db = new DBHandler(v.getContext(), null, null, 1);
-//                        db.deleteNote(allMovies.get(i).getImdbID());
-//                        allMovies.remove(allMovies.get(i));
-//                        notifyItemRemoved(i+1);
-//                        notifyDataSetChanged();
-//                        Toast.makeText(v.getContext(), "Movie deleted...",
-//                                Toast.LENGTH_LONG).show();
-//                    }
-//                });
-//                builder.setNegativeButton("No", null);
-//                AlertDialog ad = builder.create();
-//                ad.setCanceledOnTouchOutside(true);
-//                ad.show();
-//            }
-//        });
+        movieViewHolder.imgButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final View v = view;
+                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                builder.setTitle("Delete?");
+                builder.setMessage("Are you sure?") ;
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        DBHandler db = new DBHandler(v.getContext(), null, null, 1);
+                        db.deleteNote(allMovies.get(i).getImdbID());
+                        allMovies.remove(allMovies.get(i));
+                        notifyItemRemoved(i+1);
+                        notifyDataSetChanged();
+                        Toast.makeText(v.getContext(), "Movie deleted...",
+                                Toast.LENGTH_LONG).show();
+                    }
+                });
+                builder.setNegativeButton("No", null);
+                AlertDialog ad = builder.create();
+                ad.setCanceledOnTouchOutside(true);
+                ad.show();
+            }
+        });
     }
 
     @Override

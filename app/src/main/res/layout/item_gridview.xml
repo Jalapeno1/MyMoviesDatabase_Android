@@ -19,7 +19,6 @@
             android:text="Lord of the Rings: The Fellowship of The Ring"
             android:textColor="@android:color/black"
             android:textSize="13sp"
-            android:textStyle="bold"
             android:id="@+id/textView_ADD_TITLE"
             android:layout_marginLeft="6dp"
             android:layout_marginRight="6dp"
@@ -41,12 +40,12 @@
             android:gravity="center_horizontal"
             android:layout_below="@+id/textView_ADD_TITLE"/>
 
-        <!--<ImageButton-->
-            <!--android:id="@+id/imgButtonDelete"-->
-            <!--android:layout_width="25dp"-->
-            <!--android:layout_height="25dp"-->
-            <!--android:background="@drawable/ic_clear_search_api_disabled_holo_light"-->
-            <!--android:layout_alignParentTop="true"-->
-            <!--android:layout_alignParentEnd="true" />-->
+        <ImageButton
+            android:id="@+id/imgButtonDelete"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@android:drawable/ic_menu_delete"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true" />
 
     </RelativeLayout>
