@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 
@@ -45,9 +46,16 @@ public class AddMovieActivityNEW extends ListActivity {
             mov = gson.fromJson(new APIConnectionManager().execute("http://www.omdbapi.com/?t=" + mSearchTitle + "&y=" + mSearchYear + "&plot=full&r=json")
                     .get(), MovieObject.class);
             Log.d(TAG, mov.toString());
-            movie.add(mov);
-            initAdapter();
-        } catch (InterruptedException | ExecutionException e) {
+            if(mov.getTitle() == null){
+                Toast.makeText(getApplicationContext(), "No movie found...",
+                        Toast.LENGTH_LONG).show();
+                Intent i = new Intent(getApplicationContext(), SearchMovieActivity.class);
+                startActivity(i);
+            } else {
+                movie.add(mov);
+                initAdapter();
+            }
+        } catch (InterruptedException | ExecutionException | RuntimeException e) {
             e.printStackTrace();
         }
     }

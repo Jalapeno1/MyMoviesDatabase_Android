@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class SearchMovieActivity extends Activity {
 
@@ -32,18 +33,25 @@ public class SearchMovieActivity extends Activity {
         buttonSearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String[] splitString = editTextSearch.getText().toString().split(",");
-                mSearchTitle = splitString[0].trim();
-                mSearchTitle = mSearchTitle.replaceAll("\\s", "+");
-                Log.d(TAG, mSearchTitle);
-                mSearchYear = splitString[1].trim();
-                Log.d(TAG, mSearchYear);
 
-                //Intent intent = new Intent(getApplicationContext(), AddMovieActivity.class);
-                Intent intent = new Intent(getApplicationContext(), AddMovieActivityNEW.class); //AddMovieActivityNEW
-                intent.putExtra("SEARCH_TITLE", mSearchTitle);
-                intent.putExtra("SEARCH_YEAR", mSearchYear);
-                startActivity(intent);
+                try{
+                    String[] splitString = editTextSearch.getText().toString().split(",");
+                    mSearchTitle = splitString[0].trim();
+                    mSearchTitle = mSearchTitle.replaceAll("\\s", "+");
+                    Log.d(TAG, mSearchTitle);
+                    mSearchYear = splitString[1].trim();
+                    Log.d(TAG, mSearchYear);
+
+                    //Intent intent = new Intent(getApplicationContext(), AddMovieActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), AddMovieActivityNEW.class); //AddMovieActivityNEW
+                    intent.putExtra("SEARCH_TITLE", mSearchTitle);
+                    intent.putExtra("SEARCH_YEAR", mSearchYear);
+                    startActivity(intent);
+                } catch (Exception e){
+                    Toast.makeText(getApplicationContext(), "Write title and year separated by ,",
+                            Toast.LENGTH_LONG).show();
+                }
+
             }
         });
     }
