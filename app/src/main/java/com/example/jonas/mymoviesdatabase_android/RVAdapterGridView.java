@@ -27,7 +27,7 @@ public class RVAdapterGridView extends RecyclerView.Adapter<RVAdapterGridView.Mo
 
         RelativeLayout rl;
 
-        ImageButton imgButton;
+        //ImageButton imgButton;
 
         ImageView movie_poster;
         TextView movie_title;
@@ -37,7 +37,7 @@ public class RVAdapterGridView extends RecyclerView.Adapter<RVAdapterGridView.Mo
             super(itemView);
             rl = (RelativeLayout)itemView.findViewById(R.id.rel_layout);
 
-            imgButton = (ImageButton) itemView.findViewById(R.id.imgButtonDelete);
+            //imgButton = (ImageButton) itemView.findViewById(R.id.imgButtonDelete);
 
 //            imgButton.setVisibility(itemView.GONE);
 //            rl.setOnLongClickListener(new View.OnLongClickListener() {
@@ -106,9 +106,9 @@ public class RVAdapterGridView extends RecyclerView.Adapter<RVAdapterGridView.Mo
             movieViewHolder.movie_year.setText(allMovies.get(i).getYear());
         }
 
-        movieViewHolder.imgButton.setOnClickListener(new View.OnClickListener() {
+        movieViewHolder.rl.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
-            public void onClick(View view) {
+            public boolean onLongClick(View view) {
                 final View v = view;
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                 builder.setTitle("Delete?");
@@ -129,6 +129,7 @@ public class RVAdapterGridView extends RecyclerView.Adapter<RVAdapterGridView.Mo
                 AlertDialog ad = builder.create();
                 ad.setCanceledOnTouchOutside(true);
                 ad.show();
+                return true;
             }
         });
     }

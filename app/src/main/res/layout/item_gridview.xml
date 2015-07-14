@@ -40,12 +40,12 @@
             android:gravity="center_horizontal"
             android:layout_below="@+id/textView_ADD_TITLE"/>
 
-        <ImageButton
-            android:id="@+id/imgButtonDelete"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:background="@android:drawable/ic_menu_delete"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true" />
+        <!--<ImageButton-->
+            <!--android:id="@+id/imgButtonDelete"-->
+            <!--android:layout_width="25dp"-->
+            <!--android:layout_height="25dp"-->
+            <!--android:background="@android:drawable/ic_menu_delete"-->
+            <!--android:layout_alignParentTop="true"-->
+            <!--android:layout_alignParentEnd="true" />-->
 
     </RelativeLayout>
