@@ -26,6 +26,7 @@ public class RVAdapterGridView extends RecyclerView.Adapter<RVAdapterGridView.Mo
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
 
         RelativeLayout rl;
+        CardView cv;
 
         //ImageButton imgButton;
 
@@ -36,6 +37,7 @@ public class RVAdapterGridView extends RecyclerView.Adapter<RVAdapterGridView.Mo
         MovieViewHolder(View itemView) {
             super(itemView);
             rl = (RelativeLayout)itemView.findViewById(R.id.rel_layout);
+            cv = (CardView)itemView.findViewById(R.id.cv);
 
             //imgButton = (ImageButton) itemView.findViewById(R.id.imgButtonDelete);
 
@@ -92,7 +94,7 @@ public class RVAdapterGridView extends RecyclerView.Adapter<RVAdapterGridView.Mo
         });
 
         if(movieViewHolder.movie_poster != null){
-            new DownloadRoundImageManager(movieViewHolder.movie_poster).execute(allMovies.get(i).getPoster());
+            new DownloadImageManager(movieViewHolder.movie_poster).execute(allMovies.get(i).getPoster());
         }
 
         if(movieViewHolder.movie_title != null){

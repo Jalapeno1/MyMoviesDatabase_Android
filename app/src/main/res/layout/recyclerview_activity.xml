@@ -4,23 +4,9 @@
     android:padding="6dp"
     >
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Movie Collection"
-        android:textColor="@android:color/black"
-        android:textSize="13sp"
-        android:textStyle="bold"
-        android:id="@+id/textView_INTRO"
-        android:layout_marginLeft="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_centerHorizontal="true"
-        android:gravity="center_horizontal"/>
-
     <android.support.v7.widget.RecyclerView
         android:layout_height="match_parent"
         android:layout_width="match_parent"
-        android:layout_below="@+id/textView_INTRO"
         android:id="@+id/rv"
         >
 
